@@ -116,7 +116,8 @@
   },
   "dependencies": {
     "assist-worker": "^1.2.0",
-    "bezier-js": "^6.1.4"
+    "bezier-js": "^6.1.4",
+    "warpvas": "link:"
   },
   "engines": {
     "node": ">=14.0.0"
