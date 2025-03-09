@@ -1,6 +1,6 @@
 # Warpvas
 
-[English](README.en.md) | [中文](README.md)
+[English](README.md) | [中文](README.cn.md)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
@@ -134,7 +134,6 @@ warpvas
         gridColor: { r: 206, g: 102, b: 91, a: 1 }
     });
 ```
-```
 
 ### 8. 设置网格细分点的计算策略
 
@@ -196,7 +195,7 @@ const warpvas = new Warpvas(canvas);
 await warpvas.renderWithWorker();
 ```
 
-查看项目的[在线示例](https://huanjinliu.github.io/warpvas/)，或直接查阅[项目API文档](./docs/apis/README.md)。
+查看项目的[在线示例](https://huanjinliu.github.io/warpvas/)，或直接查阅[项目API文档](docs/api/README.md)。
 
 ### 许可证
 
