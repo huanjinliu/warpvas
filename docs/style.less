@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+    &-track {
+      background: transparent;
+      border-radius: 2px;
+    }
+
+    &-thumb {
+      background: #66666633;
+      border-radius: 8px;
+      transition: all 0.1s;
+    }
+
+    &-thumb:hover {
+      background: #66666666;
+    }
+
+    &-corner {
+      background: transparent;
+    }
+  }
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: radial-gradient(#f1f1f1 10%, transparent 0%);
+  background-size: 20px 20px;
+  font-family: 'handwriting';
+  color: #333;
+}
+
+.docs {
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .logo {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+  // header {
+  //   position: relative;
+  //   text-align: center;
+  //   padding: 24px;
+  //   z-index: 1;
+  //   background-color: rgba(255, 255, 255, 0.2);
+  //   font-family: 'handwriting';
+  //   pointer-events: none;
+  //   h1 {
+  //     font-size: 50px;
+  //     margin-bottom: 24px;
+  //     font-family: 'sharpie-black';
+  //   }
+  // }
+  .examples {
+    position: relative;
+    z-index: 0;
+    width: 400px;
+    height: 350px;
+  }
+  .buttons {
+    position: relative;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+    z-index: 1;
+    & > button {
+      background-color: unset;
+      border: unset;
+      font-family: inherit;
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+    }
+  }
+  .github {
+    position: absolute;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #5b5b5b;
+    transition: color 0.2s;
+    &:hover {
+      color: #333;
+    }
+    &Label {
+      font-size: 14px;
+      margin: 0 8px;
+    }
+  }
+}
