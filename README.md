@@ -147,7 +147,7 @@ warpvas.setSplitStrategy({
         // return [[[{ x: 0, y: 0 }]]];
 
         // Use default strategy calculation result
-        return Warpvas.strategy();
+        return Warpvas.strategy(warpvas);
     }
 });
 ```
