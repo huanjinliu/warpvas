@@ -58,7 +58,7 @@ const NotePaper: React.FC<NotePaperProps> = ({ className, style, paperLink, acti
       originY: 'top',
     });
     const textbox = new fabric.Textbox(content, {
-      width: 1000,
+      width: 800,
       left: 20,
       top: topBar.getScaledHeight() + 10,
       lineHeight: 1.8,

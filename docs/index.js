@@ -29,10 +29,10 @@
 	}
 
 	var createRoot;
-	var m$1 = require$$0;
+	var m$2 = require$$0;
 	{
-	  createRoot = m$1.createRoot;
-	  m$1.hydrateRoot;
+	  createRoot = m$2.createRoot;
+	  m$2.hydrateRoot;
 	}
 
 	var dist = {};
@@ -5150,7 +5150,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	            originY: 'top',
 	        });
 	        const textbox = new fabric.fabric.Textbox(content, {
-	            width: 1000,
+	            width: 800,
 	            left: 20,
 	            top: topBar.getScaledHeight() + 10,
 	            lineHeight: 1.8,
@@ -5181,7 +5181,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	            React2.createElement("canvas", { ref: canvasRef }))));
 	};
 
-	function e(t, e, i, n) {
+	function e$1(t, e, i, n) {
 	  return new (i || (i = Promise))(function (r, o) {
 	    function s(t) {
 	      try {
@@ -5208,34 +5208,34 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	}
 	"function" == typeof SuppressedError && SuppressedError;
 	const {
-	  abs: i,
-	  cos: n,
-	  sin: r,
-	  acos: o,
-	  atan2: s,
-	  sqrt: a,
-	  pow: h
+	  abs: i$1,
+	  cos: n$1,
+	  sin: r$1,
+	  acos: o$1,
+	  atan2: s$1,
+	  sqrt: a$1,
+	  pow: h$1
 	} = Math;
-	function c(t) {
-	  return t < 0 ? -h(-t, 1 / 3) : h(t, 1 / 3);
+	function c$1(t) {
+	  return t < 0 ? -h$1(-t, 1 / 3) : h$1(t, 1 / 3);
 	}
-	const l = Math.PI,
-	  u = 2 * l,
-	  p = l / 2,
-	  g = Number.MAX_SAFE_INTEGER || 9007199254740991,
-	  x = Number.MIN_SAFE_INTEGER || -9007199254740991,
-	  f = {
+	const l$1 = Math.PI,
+	  u$1 = 2 * l$1,
+	  p$1 = l$1 / 2,
+	  g$1 = Number.MAX_SAFE_INTEGER || 9007199254740991,
+	  x$1 = Number.MIN_SAFE_INTEGER || -9007199254740991,
+	  f$1 = {
 	    x: 0,
 	    y: 0,
 	    z: 0
 	  },
-	  y = {
+	  y$1 = {
 	    Tvalues: [-.06405689286260563, .06405689286260563, -.1911188674736163, .1911188674736163, -.3150426796961634, .3150426796961634, -.4337935076260451, .4337935076260451, -.5454214713888396, .5454214713888396, -.6480936519369755, .6480936519369755, -.7401241915785544, .7401241915785544, -.820001985973903, .820001985973903, -.8864155270044011, .8864155270044011, -.9382745520027328, .9382745520027328, -.9747285559713095, .9747285559713095, -.9951872199970213, .9951872199970213],
 	    Cvalues: [.12793819534675216, .12793819534675216, .1258374563468283, .1258374563468283, .12167047292780339, .12167047292780339, .1155056680537256, .1155056680537256, .10744427011596563, .10744427011596563, .09761865210411388, .09761865210411388, .08619016153195327, .08619016153195327, .0733464814110803, .0733464814110803, .05929858491543678, .05929858491543678, .04427743881741981, .04427743881741981, .028531388628933663, .028531388628933663, .0123412297999872, .0123412297999872],
 	    arcfn: function (t, e) {
 	      const i = e(t);
 	      let n = i.x * i.x + i.y * i.y;
-	      return void 0 !== i.z && (n += i.z * i.z), a(n);
+	      return void 0 !== i.z && (n += i.z * i.z), a$1(n);
 	    },
 	    compute: function (t, e, i) {
 	      if (0 === t) return e[0].t = 0, e[0];
@@ -5259,7 +5259,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          h = r * r,
 	          c = t * t,
 	          l = 0;
-	        2 === n ? (o = [o[0], o[1], o[2], f], e = h, s = r * t * 2, a = c) : 3 === n && (e = h * r, s = h * t * 3, a = r * c * 3, l = t * c);
+	        2 === n ? (o = [o[0], o[1], o[2], f$1], e = h, s = r * t * 2, a = c) : 3 === n && (e = h * r, s = h * t * 3, a = r * c * 3, l = t * c);
 	        const u = {
 	          x: e * o[0].x + s * o[1].x + a * o[2].x + l * o[3].x,
 	          y: e * o[0].y + s * o[1].y + a * o[2].y + l * o[3].y,
@@ -5316,15 +5316,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      return i;
 	    },
 	    between: function (t, e, i) {
-	      return e <= t && t <= i || y.approximately(t, e) || y.approximately(t, i);
+	      return e <= t && t <= i || y$1.approximately(t, e) || y$1.approximately(t, i);
 	    },
 	    approximately: function (t, e, n) {
-	      return i(t - e) <= (n || 1e-6);
+	      return i$1(t - e) <= (n || 1e-6);
 	    },
 	    length: function (t) {
-	      const e = y.Tvalues.length;
+	      const e = y$1.Tvalues.length;
 	      let i = 0;
-	      for (let n, r = 0; r < e; r++) n = .5 * y.Tvalues[r] + .5, i += y.Cvalues[r] * y.arcfn(n, t);
+	      for (let n, r = 0; r < e; r++) n = .5 * y$1.Tvalues[r] + .5, i += y$1.Cvalues[r] * y$1.arcfn(n, t);
 	      return .5 * i;
 	    },
 	    map: function (t, e, i, n, r) {
@@ -5342,7 +5342,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      return void 0 !== t.z && (e += "/" + t.z), e;
 	    },
 	    pointsToString: function (t) {
-	      return "[" + t.map(y.pointToString).join(", ") + "]";
+	      return "[" + t.map(y$1.pointToString).join(", ") + "]";
 	    },
 	    copy: function (t) {
 	      return JSON.parse(JSON.stringify(t));
@@ -5352,7 +5352,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        r = e.y - t.y,
 	        o = i.x - t.x,
 	        a = i.y - t.y;
-	      return s(n * a - r * o, n * o + r * a);
+	      return s$1(n * a - r * o, n * o + r * a);
 	    },
 	    round: function (t, e) {
 	      const i = "" + t,
@@ -5362,14 +5362,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    dist: function (t, e) {
 	      const i = t.x - e.x,
 	        n = t.y - e.y;
-	      return a(i * i + n * n);
+	      return a$1(i * i + n * n);
 	    },
 	    closest: function (t, e) {
 	      let i,
 	        n,
-	        r = h(2, 63);
+	        r = h$1(2, 63);
 	      return t.forEach(function (t, o) {
-	        n = y.dist(e, t), n < r && (r = n, i = o);
+	        n = y$1.dist(e, t), n < r && (r = n, i = o);
 	      }), {
 	        mdist: r,
 	        mpos: i
@@ -5378,14 +5378,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    abcratio: function (t, e) {
 	      if (2 !== e && 3 !== e) return !1;
 	      if (void 0 === t) t = .5;else if (0 === t || 1 === t) return t;
-	      const n = h(t, e) + h(1 - t, e);
-	      return i((n - 1) / n);
+	      const n = h$1(t, e) + h$1(1 - t, e);
+	      return i$1((n - 1) / n);
 	    },
 	    projectionratio: function (t, e) {
 	      if (2 !== e && 3 !== e) return !1;
 	      if (void 0 === t) t = .5;else if (0 === t || 1 === t) return t;
-	      const i = h(1 - t, e);
-	      return i / (h(t, e) + i);
+	      const i = h$1(1 - t, e);
+	      return i / (h$1(t, e) + i);
 	    },
 	    lli8: function (t, e, i, n, r, o, s, a) {
 	      const h = (t - i) * (o - a) - (e - n) * (r - s);
@@ -5403,19 +5403,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        c = i.y,
 	        l = n.x,
 	        u = n.y;
-	      return y.lli8(r, o, s, a, h, c, l, u);
+	      return y$1.lli8(r, o, s, a, h, c, l, u);
 	    },
 	    lli: function (t, e) {
-	      return y.lli4(t, t.c, e, e.c);
+	      return y$1.lli4(t, t.c, e, e.c);
 	    },
 	    makeline: function (t, e) {
-	      return new T(t.x, t.y, (t.x + e.x) / 2, (t.y + e.y) / 2, e.x, e.y);
+	      return new T$1(t.x, t.y, (t.x + e.x) / 2, (t.y + e.y) / 2, e.x, e.y);
 	    },
 	    findbbox: function (t) {
-	      let e = g,
-	        i = g,
-	        n = x,
-	        r = x;
+	      let e = g$1,
+	        i = g$1,
+	        n = x$1,
+	        r = x$1;
 	      return t.forEach(function (t) {
 	        const o = t.bbox();
 	        e > o.x.min && (e = o.x.min), i > o.y.min && (i = o.y.min), n < o.x.max && (n = o.x.max), r < o.y.max && (r = o.y.max);
@@ -5435,7 +5435,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      };
 	    },
 	    shapeintersections: function (t, e, i, n, r) {
-	      if (!y.bboxoverlap(e, n)) return [];
+	      if (!y$1.bboxoverlap(e, n)) return [];
 	      const o = [],
 	        s = [t.startcap, t.forward, t.back, t.endcap],
 	        a = [i.startcap, i.forward, i.back, i.endcap];
@@ -5450,16 +5450,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    makeshape: function (t, e, i) {
 	      const n = e.points.length,
 	        r = t.points.length,
-	        o = y.makeline(e.points[n - 1], t.points[0]),
-	        s = y.makeline(t.points[r - 1], e.points[0]),
+	        o = y$1.makeline(e.points[n - 1], t.points[0]),
+	        s = y$1.makeline(t.points[r - 1], e.points[0]),
 	        a = {
 	          startcap: o,
 	          forward: t,
 	          back: e,
 	          endcap: s,
-	          bbox: y.findbbox([o, t, e, s]),
+	          bbox: y$1.findbbox([o, t, e, s]),
 	          intersections: function (t) {
-	            return y.shapeintersections(a, a.bbox, t, t.bbox, i);
+	            return y$1.shapeintersections(a, a.bbox, t, t.bbox, i);
 	          }
 	        };
 	      return a;
@@ -5471,8 +5471,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      };
 	      let n,
 	        r,
-	        o = g,
-	        s = x;
+	        o = g$1,
+	        s = x$1;
 	      -1 === i.indexOf(0) && (i = [0].concat(i)), -1 === i.indexOf(1) && i.push(1);
 	      for (let a = 0, h = i.length; a < h; a++) n = i[a], r = t.get(n), r[e] < o && (o = r[e]), r[e] > s && (s = r[e]);
 	      return {
@@ -5485,11 +5485,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    align: function (t, e) {
 	      const i = e.p1.x,
 	        o = e.p1.y,
-	        a = -s(e.p2.y - o, e.p2.x - i);
+	        a = -s$1(e.p2.y - o, e.p2.x - i);
 	      return t.map(function (t) {
 	        return {
-	          x: (t.x - i) * n(a) - (t.y - o) * r(a),
-	          y: (t.x - i) * r(a) + (t.y - o) * n(a)
+	          x: (t.x - i) * n$1(a) - (t.y - o) * r$1(a),
+	          y: (t.x - i) * r$1(a) + (t.y - o) * n$1(a)
 	        };
 	      });
 	    },
@@ -5505,7 +5505,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        }
 	      };
 	      const i = t.length - 1,
-	        r = y.align(t, e),
+	        r = y$1.align(t, e),
 	        s = function (t) {
 	          return 0 <= t && t <= 1;
 	        };
@@ -5515,7 +5515,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          i = r[2].y,
 	          n = t - 2 * e + i;
 	        if (0 !== n) {
-	          const r = -a(e * e - t * i),
+	          const r = -a$1(e * e - t * i),
 	            o = -t + e;
 	          return [-(r + o) / n, -(-r + o) / n].filter(s);
 	        }
@@ -5528,9 +5528,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        x = 3 * h - 6 * l + 3 * p,
 	        f = -3 * h + 3 * l,
 	        d = h;
-	      if (y.approximately(g, 0)) {
-	        if (y.approximately(x, 0)) return y.approximately(f, 0) ? [] : [-d / f].filter(s);
-	        const t = a(f * f - 4 * x * d),
+	      if (y$1.approximately(g, 0)) {
+	        if (y$1.approximately(x, 0)) return y$1.approximately(f, 0) ? [] : [-d / f].filter(s);
+	        const t = a$1(f * f - 4 * x * d),
 	          e = 2 * x;
 	        return [(t - f) / e, (-f - t) / e].filter(s);
 	      }
@@ -5543,16 +5543,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      let w, C, z, T, R;
 	      if (E < 0) {
 	        const t = -m / 3,
-	          e = a(t * t * t),
+	          e = a$1(t * t * t),
 	          i = -_ / (2 * e),
-	          r = o(i < -1 ? -1 : i > 1 ? 1 : i),
-	          h = 2 * c(e);
-	        return z = h * n(r / 3) - x / 3, T = h * n((r + u) / 3) - x / 3, R = h * n((r + 2 * u) / 3) - x / 3, [z, T, R].filter(s);
+	          r = o$1(i < -1 ? -1 : i > 1 ? 1 : i),
+	          h = 2 * c$1(e);
+	        return z = h * n$1(r / 3) - x / 3, T = h * n$1((r + u$1) / 3) - x / 3, R = h * n$1((r + 2 * u$1) / 3) - x / 3, [z, T, R].filter(s);
 	      }
-	      if (0 === E) return w = b < 0 ? c(-b) : -c(b), z = 2 * w - x / 3, T = -w - x / 3, [z, T].filter(s);
+	      if (0 === E) return w = b < 0 ? c$1(-b) : -c$1(b), z = 2 * w - x / 3, T = -w - x / 3, [z, T].filter(s);
 	      {
-	        const t = a(E);
-	        return w = c(-b + t), C = c(b + t), [w - C - x / 3].filter(s);
+	        const t = a$1(E);
+	        return w = c$1(-b + t), C = c$1(b + t), [w - C - x / 3].filter(s);
 	      }
 	    },
 	    droots: function (t) {
@@ -5562,7 +5562,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          n = t[2],
 	          r = e - 2 * i + n;
 	        if (0 !== r) {
-	          const t = -a(i * i - e * n),
+	          const t = -a$1(i * i - e * n),
 	            o = -e + i;
 	          return [-(t + o) / r, -(-t + o) / r];
 	        }
@@ -5582,17 +5582,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        u,
 	        p = 0,
 	        g = 0;
-	      const x = y.compute(t, e),
-	        f = y.compute(t, n),
+	      const x = y$1.compute(t, e),
+	        f = y$1.compute(t, n),
 	        d = x.x * x.x + x.y * x.y;
-	      if (r ? (s = a(h(x.y * f.z - f.y * x.z, 2) + h(x.z * f.x - f.z * x.x, 2) + h(x.x * f.y - f.x * x.y, 2)), c = h(d + x.z * x.z, 1.5)) : (s = x.x * f.y - x.y * f.x, c = h(d, 1.5)), 0 === s || 0 === c) return {
+	      if (r ? (s = a$1(h$1(x.y * f.z - f.y * x.z, 2) + h$1(x.z * f.x - f.z * x.x, 2) + h$1(x.x * f.y - f.x * x.y, 2)), c = h$1(d + x.z * x.z, 1.5)) : (s = x.x * f.y - x.y * f.x, c = h$1(d, 1.5)), 0 === s || 0 === c) return {
 	        k: 0,
 	        r: 0
 	      };
 	      if (p = s / c, g = c / s, !o) {
-	        const o = y.curvature(t - .001, e, n, r, !0).k,
-	          s = y.curvature(t + .001, e, n, r, !0).k;
-	        u = (s - p + (p - o)) / 2, l = (i(s - p) + i(p - o)) / 2;
+	        const o = y$1.curvature(t - .001, e, n, r, !0).k,
+	          s = y$1.curvature(t + .001, e, n, r, !0).k;
+	        u = (s - p + (p - o)) / 2, l = (i$1(s - p) + i$1(p - o)) / 2;
 	      }
 	      return {
 	        k: p,
@@ -5603,7 +5603,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    },
 	    inflections: function (t) {
 	      if (t.length < 4) return [];
-	      const e = y.align(t, {
+	      const e = y$1.align(t, {
 	          p1: t[0],
 	          p2: t.slice(-1)[0]
 	        }),
@@ -5613,15 +5613,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        o = 18 * (-3 * i + 2 * n + 3 * r - e[3].x * e[2].y),
 	        s = 18 * (3 * i - n - 3 * r),
 	        a = 18 * (r - i);
-	      if (y.approximately(o, 0)) {
-	        if (!y.approximately(s, 0)) {
+	      if (y$1.approximately(o, 0)) {
+	        if (!y$1.approximately(s, 0)) {
 	          let t = -a / s;
 	          if (0 <= t && t <= 1) return [t];
 	        }
 	        return [];
 	      }
 	      const h = 2 * o;
-	      if (y.approximately(h, 0)) return [];
+	      if (y$1.approximately(h, 0)) return [];
 	      const c = s * s - 4 * o * a;
 	      if (c < 0) return [];
 	      const l = Math.sqrt(c);
@@ -5632,7 +5632,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    bboxoverlap: function (t, e) {
 	      const n = ["x", "y"],
 	        r = n.length;
-	      for (let o, s, a, h, c = 0; c < r; c++) if (o = n[c], s = t[o].mid, a = e[o].mid, h = (t[o].size + e[o].size) / 2, i(s - a) >= h) return !1;
+	      for (let o, s, a, h, c = 0; c < r; c++) if (o = n[c], s = t[o].mid, a = e[o].mid, h = (t[o].size + e[o].size) / 2, i$1(s - a) >= h) return !1;
 	      return !0;
 	    },
 	    expandbox: function (t, e) {
@@ -5660,11 +5660,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          right: h.left
 	        }];
 	      c = c.filter(function (t) {
-	        return y.bboxoverlap(t.left.bbox(), t.right.bbox());
+	        return y$1.bboxoverlap(t.left.bbox(), t.right.bbox());
 	      });
 	      let l = [];
 	      return 0 === c.length || (c.forEach(function (t) {
-	        l = l.concat(y.pairiteration(t.left, t.right, s));
+	        l = l.concat(y$1.pairiteration(t.left, t.right, s));
 	      }), l = l.filter(function (t, e) {
 	        return l.indexOf(t) === e;
 	      })), l;
@@ -5674,10 +5674,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        a = e.y - t.y,
 	        h = i.x - e.x,
 	        c = i.y - e.y,
-	        l = o * n(p) - a * r(p),
-	        g = o * r(p) + a * n(p),
-	        x = h * n(p) - c * r(p),
-	        f = h * r(p) + c * n(p),
+	        l = o * n$1(p$1) - a * r$1(p$1),
+	        g = o * r$1(p$1) + a * n$1(p$1),
+	        x = h * n$1(p$1) - c * r$1(p$1),
+	        f = h * r$1(p$1) + c * n$1(p$1),
 	        d = (t.x + e.x) / 2,
 	        m = (t.y + e.y) / 2,
 	        v = (e.x + i.x) / 2,
@@ -5686,19 +5686,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        E = m + g,
 	        w = v + x,
 	        C = _ + f,
-	        z = y.lli8(d, m, b, E, v, _, w, C),
-	        T = y.dist(z, t);
+	        z = y$1.lli8(d, m, b, E, v, _, w, C),
+	        T = y$1.dist(z, t);
 	      let R,
-	        S = s(t.y - z.y, t.x - z.x),
-	        P = s(e.y - z.y, e.x - z.x),
-	        M = s(i.y - z.y, i.x - z.x);
-	      return S < M ? ((S > P || P > M) && (S += u), S > M && (R = M, M = S, S = R)) : M < P && P < S ? (R = M, M = S, S = R) : M += u, z.s = S, z.e = M, z.r = T, z;
+	        S = s$1(t.y - z.y, t.x - z.x),
+	        P = s$1(e.y - z.y, e.x - z.x),
+	        M = s$1(i.y - z.y, i.x - z.x);
+	      return S < M ? ((S > P || P > M) && (S += u$1), S > M && (R = M, M = S, S = R)) : M < P && P < S ? (R = M, M = S, S = R) : M += u$1, z.s = S, z.e = M, z.r = T, z;
 	    },
 	    numberSort: function (t, e) {
 	      return t - e;
 	    }
 	  };
-	class d {
+	let d$1 = class d {
 	  constructor(t) {
 	    this.curves = [], this._3d = !1, t && (this.curves = t, this._3d = this.curves[0]._3d);
 	  }
@@ -5707,7 +5707,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  }
 	  toString() {
 	    return "[" + this.curves.map(function (t) {
-	      return y.pointsToString(t.points);
+	      return y$1.pointsToString(t.points);
 	    }).join(", ") + "]";
 	  }
 	  addCurve(t) {
@@ -5725,7 +5725,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  }
 	  bbox() {
 	    const t = this.curves;
-	    for (var e = t[0].bbox(), i = 1; i < t.length; i++) y.expandbox(e, t[i].bbox());
+	    for (var e = t[0].bbox(), i = 1; i < t.length; i++) y$1.expandbox(e, t[i].bbox());
 	    return e;
 	  }
 	  offset(t) {
@@ -5734,18 +5734,18 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      e.push(...i.offset(t));
 	    }), new d(e);
 	  }
-	}
+	};
 	const {
-	    abs: m,
-	    min: v,
-	    max: _,
-	    cos: b,
-	    sin: E,
-	    acos: w,
-	    sqrt: C
+	    abs: m$1,
+	    min: v$1,
+	    max: _$1,
+	    cos: b$1,
+	    sin: E$1,
+	    acos: w$1,
+	    sqrt: C$1
 	  } = Math,
-	  z = Math.PI;
-	class T {
+	  z$1 = Math.PI;
+	let T$1 = class T {
 	  constructor(t) {
 	    let e = t && t.forEach ? t : Array.from(arguments).slice(),
 	      i = !1;
@@ -5778,12 +5778,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    const h = this.order = s.length - 1,
 	      c = this.dims = ["x", "y"];
 	    o && c.push("z"), this.dimlen = c.length;
-	    const l = y.align(s, {
+	    const l = y$1.align(s, {
 	        p1: s[0],
 	        p2: s[h]
 	      }),
-	      u = y.dist(s[0], s[h]);
-	    this._linear = l.reduce((t, e) => t + m(e.y), 0) < u / 50, this._lut = [], this._t1 = 0, this._t2 = 1, this.update();
+	      u = y$1.dist(s[0], s[h]);
+	    this._linear = l.reduce((t, e) => t + m$1(e.y), 0) < u / 50, this._lut = [], this._t1 = 0, this._t2 = 1, this.update();
 	  }
 	  static quadraticFromPoints(t, e, i, n) {
 	    if (void 0 === n && (n = .5), 0 === n) return new T(e, e, i);
@@ -5794,9 +5794,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  static cubicFromPoints(t, e, i, n, r) {
 	    void 0 === n && (n = .5);
 	    const o = T.getABC(3, t, e, i, n);
-	    void 0 === r && (r = y.dist(e, o.C));
+	    void 0 === r && (r = y$1.dist(e, o.C));
 	    const s = r * (1 - n) / n,
-	      a = y.dist(t, i),
+	      a = y$1.dist(t, i),
 	      h = (i.x - t.x) / a,
 	      c = (i.y - t.y) / a,
 	      l = r * h,
@@ -5823,19 +5823,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return new T(t, C, z, i);
 	  }
 	  static getUtils() {
-	    return y;
+	    return y$1;
 	  }
 	  getUtils() {
 	    return T.getUtils();
 	  }
 	  static get PolyBezier() {
-	    return d;
+	    return d$1;
 	  }
 	  valueOf() {
 	    return this.toString();
 	  }
 	  toString() {
-	    return y.pointsToString(this.points);
+	    return y$1.pointsToString(this.points);
 	  }
 	  toSVG() {
 	    if (this._3d) return !1;
@@ -5858,24 +5858,24 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    }).join("");
 	  }
 	  update() {
-	    this._lut = [], this.dpoints = y.derive(this.points, this._3d), this.computedirection();
+	    this._lut = [], this.dpoints = y$1.derive(this.points, this._3d), this.computedirection();
 	  }
 	  computedirection() {
 	    const t = this.points,
-	      e = y.angle(t[0], t[this.order], t[1]);
+	      e = y$1.angle(t[0], t[this.order], t[1]);
 	    this.clockwise = e > 0;
 	  }
 	  length() {
-	    return y.length(this.derivative.bind(this));
+	    return y$1.length(this.derivative.bind(this));
 	  }
 	  static getABC(t = 2, e, i, n, r = .5) {
-	    const o = y.projectionratio(r, t),
+	    const o = y$1.projectionratio(r, t),
 	      s = 1 - o,
 	      a = {
 	        x: o * e.x + s * n.x,
 	        y: o * e.y + s * n.y
 	      },
-	      h = y.abcratio(r, t);
+	      h = y$1.abcratio(r, t);
 	    return {
 	      A: {
 	        x: i.x + (i.x - a.x) / h,
@@ -5903,13 +5903,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    i = i || 5;
 	    const n = this.getLUT(),
 	      r = [];
-	    for (let t, o = 0, s = 0; o < n.length; o++) t = n[o], y.dist(t, e) < i && (r.push(t), s += o / n.length);
+	    for (let t, o = 0, s = 0; o < n.length; o++) t = n[o], y$1.dist(t, e) < i && (r.push(t), s += o / n.length);
 	    return !!r.length && (t /= r.length);
 	  }
 	  project(t) {
 	    const e = this.getLUT(),
 	      i = e.length - 1,
-	      n = y.closest(e, t),
+	      n = y$1.closest(e, t),
 	      r = n.mpos,
 	      o = (r - 1) / i,
 	      s = (r + 1) / i,
@@ -5919,7 +5919,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      l = o,
 	      u = l;
 	    c += 1;
-	    for (let e; l < s + a; l += a) h = this.compute(l), e = y.dist(t, h), e < c && (c = e, u = l);
+	    for (let e; l < s + a; l += a) h = this.compute(l), e = y$1.dist(t, h), e < c && (c = e, u = l);
 	    return u = u < 0 ? 0 : u > 1 ? 1 : u, h = this.compute(u), h.t = u, h.d = c, h;
 	  }
 	  get(t) {
@@ -5929,7 +5929,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return this.points[t];
 	  }
 	  compute(t) {
-	    return this.ratios ? y.computeWithRatios(t, this.points, this.ratios, this._3d) : y.compute(t, this.points, this._3d, this.ratios);
+	    return this.ratios ? y$1.computeWithRatios(t, this.points, this.ratios, this._3d) : y$1.compute(t, this.points, this._3d, this.ratios);
 	  }
 	  raise() {
 	    const t = this.points,
@@ -5942,30 +5942,30 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return e[i] = t[i - 1], new T(e);
 	  }
 	  derivative(t) {
-	    return y.compute(t, this.dpoints[0], this._3d);
+	    return y$1.compute(t, this.dpoints[0], this._3d);
 	  }
 	  dderivative(t) {
-	    return y.compute(t, this.dpoints[1], this._3d);
+	    return y$1.compute(t, this.dpoints[1], this._3d);
 	  }
 	  align() {
 	    let t = this.points;
-	    return new T(y.align(t, {
+	    return new T(y$1.align(t, {
 	      p1: t[0],
 	      p2: t[t.length - 1]
 	    }));
 	  }
 	  curvature(t) {
-	    return y.curvature(t, this.dpoints[0], this.dpoints[1], this._3d);
+	    return y$1.curvature(t, this.dpoints[0], this.dpoints[1], this._3d);
 	  }
 	  inflections() {
-	    return y.inflections(this.points);
+	    return y$1.inflections(this.points);
 	  }
 	  normal(t) {
 	    return this._3d ? this.__normal3(t) : this.__normal2(t);
 	  }
 	  __normal2(t) {
 	    const e = this.derivative(t),
-	      i = C(e.x * e.x + e.y * e.y);
+	      i = C$1(e.x * e.x + e.y * e.y);
 	    return {
 	      t: t,
 	      x: -e.y / i,
@@ -5975,15 +5975,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  __normal3(t) {
 	    const e = this.derivative(t),
 	      i = this.derivative(t + .01),
-	      n = C(e.x * e.x + e.y * e.y + e.z * e.z),
-	      r = C(i.x * i.x + i.y * i.y + i.z * i.z);
+	      n = C$1(e.x * e.x + e.y * e.y + e.z * e.z),
+	      r = C$1(i.x * i.x + i.y * i.y + i.z * i.z);
 	    e.x /= n, e.y /= n, e.z /= n, i.x /= r, i.y /= r, i.z /= r;
 	    const o = {
 	        x: i.y * e.z - i.z * e.y,
 	        y: i.z * e.x - i.x * e.z,
 	        z: i.x * e.y - i.y * e.x
 	      },
-	      s = C(o.x * o.x + o.y * o.y + o.z * o.z);
+	      s = C$1(o.x * o.x + o.y * o.y + o.z * o.z);
 	    o.x /= s, o.y /= s, o.z /= s;
 	    const a = [o.x * o.x, o.x * o.y - o.z, o.x * o.z + o.y, o.x * o.y + o.z, o.y * o.y, o.y * o.z - o.x, o.x * o.z - o.y, o.y * o.z + o.x, o.z * o.z];
 	    return {
@@ -6000,7 +6000,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      r = 0;
 	    for (n[r++] = e[0], n[r++] = e[1], n[r++] = e[2], 3 === this.order && (n[r++] = e[3]); e.length > 1;) {
 	      i = [];
-	      for (let o, s = 0, a = e.length - 1; s < a; s++) o = y.lerp(t, e[s], e[s + 1]), n[r++] = o, i.push(o);
+	      for (let o, s = 0, a = e.length - 1; s < a; s++) o = y$1.lerp(t, e[s], e[s + 1]), n[r++] = o, i.push(o);
 	      e = i;
 	    }
 	    return n;
@@ -6014,7 +6014,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        right: 2 === this.order ? new T([i[5], i[4], i[2]]) : new T([i[9], i[8], i[6], i[3]]),
 	        span: i
 	      };
-	    return n.left._t1 = y.map(0, 0, 1, this._t1, this._t2), n.left._t2 = y.map(t, 0, 1, this._t1, this._t2), n.right._t1 = y.map(t, 0, 1, this._t1, this._t2), n.right._t2 = y.map(1, 0, 1, this._t1, this._t2), e ? (e = y.map(e, t, 1, 0, 1), n.right.split(e).left) : n;
+	    return n.left._t1 = y$1.map(0, 0, 1, this._t1, this._t2), n.left._t2 = y$1.map(t, 0, 1, this._t1, this._t2), n.right._t1 = y$1.map(t, 0, 1, this._t1, this._t2), n.right._t2 = y$1.map(1, 0, 1, this._t1, this._t2), e ? (e = y$1.map(e, t, 1, 0, 1), n.right.split(e).left) : n;
 	  }
 	  extrema() {
 	    const t = {};
@@ -6024,10 +6024,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          return t[i];
 	        },
 	        r = this.dpoints[0].map(n);
-	      t[i] = y.droots(r), 3 === this.order && (r = this.dpoints[1].map(n), t[i] = t[i].concat(y.droots(r))), t[i] = t[i].filter(function (t) {
+	      t[i] = y$1.droots(r), 3 === this.order && (r = this.dpoints[1].map(n), t[i] = t[i].concat(y$1.droots(r))), t[i] = t[i].filter(function (t) {
 	        return t >= 0 && t <= 1;
-	      }), e = e.concat(t[i].sort(y.numberSort));
-	    }.bind(this)), t.values = e.sort(y.numberSort).filter(function (t, i) {
+	      }), e = e.concat(t[i].sort(y$1.numberSort));
+	    }.bind(this)), t.values = e.sort(y$1.numberSort).filter(function (t, i) {
 	      return e.indexOf(t) === i;
 	    }), t;
 	  }
@@ -6035,13 +6035,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    const t = this.extrema(),
 	      e = {};
 	    return this.dims.forEach(function (i) {
-	      e[i] = y.getminmax(this, i, t[i]);
+	      e[i] = y$1.getminmax(this, i, t[i]);
 	    }.bind(this)), e;
 	  }
 	  overlaps(t) {
 	    const e = this.bbox(),
 	      i = t.bbox();
-	    return y.bboxoverlap(e, i);
+	    return y$1.bboxoverlap(e, i);
 	  }
 	  offset(t, e) {
 	    if (void 0 !== e) {
@@ -6072,14 +6072,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  }
 	  simple() {
 	    if (3 === this.order) {
-	      const t = y.angle(this.points[0], this.points[3], this.points[1]),
-	        e = y.angle(this.points[0], this.points[3], this.points[2]);
+	      const t = y$1.angle(this.points[0], this.points[3], this.points[1]),
+	        e = y$1.angle(this.points[0], this.points[3], this.points[2]);
 	      if (t > 0 && e < 0 || t < 0 && e > 0) return !1;
 	    }
 	    const t = this.normal(0),
 	      e = this.normal(1);
 	    let i = t.x * e.x + t.y * e.y;
-	    return this._3d && (i += t.z * e.z), m(w(i)) < z / 3;
+	    return this._3d && (i += t.z * e.z), m$1(w$1(i)) < z$1 / 3;
 	  }
 	  reduce() {
 	    let t,
@@ -6093,11 +6093,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    for (-1 === a.indexOf(0) && (a = [0].concat(a)), -1 === a.indexOf(1) && a.push(1), i = a[0], t = 1; t < a.length; t++) n = a[t], e = this.split(i, n), e._t1 = i, e._t2 = n, o.push(e), i = n;
 	    return o.forEach(function (t) {
 	      for (i = 0, n = 0; n <= 1;) for (n = i + r; n <= 1.01; n += r) if (e = t.split(i, n), !e.simple()) {
-	        if (n -= r, m(i - n) < r) return [];
-	        e = t.split(i, n), e._t1 = y.map(i, 0, 1, t._t1, t._t2), e._t2 = y.map(n, 0, 1, t._t1, t._t2), s.push(e), i = n;
+	        if (n -= r, m$1(i - n) < r) return [];
+	        e = t.split(i, n), e._t1 = y$1.map(i, 0, 1, t._t1, t._t2), e._t2 = y$1.map(n, 0, 1, t._t1, t._t2), s.push(e), i = n;
 	        break;
 	      }
-	      i < 1 && (e = t.split(i, 1), e._t1 = y.map(i, 0, 1, t._t1, t._t2), e._t2 = t._t2, s.push(e));
+	      i < 1 && (e = t.split(i, 1), e._t1 = y$1.map(i, 0, 1, t._t1, t._t2), e._t2 = t._t2, s.push(e));
 	    }), s;
 	  }
 	  translate(t, e, i) {
@@ -6120,10 +6120,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      s = i ? i(1) : t,
 	      a = [this.offset(0, 10), this.offset(1, 10)],
 	      h = [],
-	      c = y.lli4(a[0], a[0].c, a[1], a[1].c);
+	      c = y$1.lli4(a[0], a[0].c, a[1], a[1].c);
 	    if (!c) throw new Error("cannot scale this curve. Try reducing it first.");
 	    return [0, 1].forEach(function (t) {
-	      const i = h[t * e] = y.copy(r[t * e]);
+	      const i = h[t * e] = y$1.copy(r[t * e]);
 	      i.x += (t ? s : o) * a[t].n.x, i.y += (t ? s : o) * a[t].n.y;
 	    }), i ? ([0, 1].forEach(function (o) {
 	      if (2 !== e || !o) {
@@ -6134,7 +6134,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          },
 	          l = i ? i((o + 1) / e) : t;
 	        i && !n && (l = -l);
-	        var u = C(a.x * a.x + a.y * a.y);
+	        var u = C$1(a.x * a.x + a.y * a.y);
 	        a.x /= u, a.y /= u, h[o + 1] = {
 	          x: s.x + l * a.x,
 	          y: s.y + l * a.y
@@ -6148,7 +6148,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          x: i.x + n.x,
 	          y: i.y + n.y
 	        };
-	      h[t + 1] = y.lli4(i, o, c, r[t + 1]);
+	      h[t + 1] = y$1.lli4(i, o, c, r[t + 1]);
 	    }), new T(h));
 	  }
 	  outline(t, e, i, n) {
@@ -6179,10 +6179,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        y: (a.y + c.y) / 2
 	      };
 	      const u = [c, h, a],
-	        p = y.makeline(u[2], l[0]),
-	        g = y.makeline(l[2], u[0]),
+	        p = y$1.makeline(u[2], l[0]),
+	        g = y$1.makeline(l[2], u[0]),
 	        x = [p, new T(l), g, new T(u)];
-	      return new d(x);
+	      return new d$1(x);
 	    }
 	    const r = this.reduce(),
 	      o = r.length,
@@ -6197,7 +6197,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        const s = n / i,
 	          a = (n + r) / i,
 	          h = e - t;
-	        return y.map(o, 0, 1, t + s * h, t + a * h);
+	        return y$1.map(o, 0, 1, t + s * h, t + a * h);
 	      };
 	    }
 	    r.forEach(function (r) {
@@ -6210,17 +6210,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      x = s[o - 1].points[s[o - 1].points.length - 1],
 	      f = h[o - 1].points[h[o - 1].points.length - 1],
 	      m = h[0].points[0],
-	      v = y.makeline(f, g),
-	      _ = y.makeline(x, m),
+	      v = y$1.makeline(f, g),
+	      _ = y$1.makeline(x, m),
 	      b = [v].concat(s).concat([_]).concat(h);
-	    return new d(b);
+	    return new d$1(b);
 	  }
 	  outlineshapes(t, e, i) {
 	    e = e || t;
 	    const n = this.outline(t, e).curves,
 	      r = [];
 	    for (let t = 1, e = n.length; t < e / 2; t++) {
-	      const o = y.makeshape(n[t], n[e - t], i);
+	      const o = y$1.makeshape(n[t], n[e - t], i);
 	      o.startcap.virtual = t > 1, o.endcap.virtual = t < e / 2 - 1, r.push(o);
 	    }
 	    return r;
@@ -6229,13 +6229,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return t ? t.p1 && t.p2 ? this.lineIntersects(t) : (t instanceof T && (t = t.reduce()), this.curveintersects(this.reduce(), t, e)) : this.selfintersects(e);
 	  }
 	  lineIntersects(t) {
-	    const e = v(t.p1.x, t.p2.x),
-	      i = v(t.p1.y, t.p2.y),
-	      n = _(t.p1.x, t.p2.x),
-	      r = _(t.p1.y, t.p2.y);
-	    return y.roots(this.points, t).filter(t => {
+	    const e = v$1(t.p1.x, t.p2.x),
+	      i = v$1(t.p1.y, t.p2.y),
+	      n = _$1(t.p1.x, t.p2.x),
+	      r = _$1(t.p1.y, t.p2.y);
+	    return y$1.roots(this.points, t).filter(t => {
 	      var o = this.get(t);
-	      return y.between(o.x, e, n) && y.between(o.y, i, r);
+	      return y$1.between(o.x, e, n) && y$1.between(o.y, i, r);
 	    });
 	  }
 	  selfintersects(t) {
@@ -6257,7 +6257,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    });
 	    let r = [];
 	    return n.forEach(function (t) {
-	      const e = y.pairiteration(t.left, t.right, i);
+	      const e = y$1.pairiteration(t.left, t.right, i);
 	      e.length > 0 && (r = r.concat(e));
 	    }), r;
 	  }
@@ -6268,10 +6268,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    const r = (n - i) / 4,
 	      o = this.get(i + r),
 	      s = this.get(n - r),
-	      a = y.dist(t, e),
-	      h = y.dist(t, o),
-	      c = y.dist(t, s);
-	    return m(h - a) + m(c - a);
+	      a = y$1.dist(t, e),
+	      h = y$1.dist(t, o),
+	      c = y$1.dist(t, s);
+	    return m$1(h - a) + m$1(c - a);
 	  }
 	  _iterate(t, e) {
 	    let i,
@@ -6290,17 +6290,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        g = r,
 	        x = 1;
 	      do {
-	        if (p = u, h = a, g = (n + r) / 2, o = this.get(g), s = this.get(r), a = y.getccenter(l, o, s), a.interval = {
+	        if (p = u, h = a, g = (n + r) / 2, o = this.get(g), s = this.get(r), a = y$1.getccenter(l, o, s), a.interval = {
 	          start: n,
 	          end: r
 	        }, u = this._error(a, l, n, r) <= t, c = p && !u, c || (x = r), u) {
 	          if (r >= 1) {
 	            if (a.interval.end = x = 1, h = a, r > 1) {
 	              let t = {
-	                x: a.x + a.r * b(a.e),
-	                y: a.y + a.r * E(a.e)
+	                x: a.x + a.r * b$1(a.e),
+	                y: a.y + a.r * E$1(a.e)
 	              };
-	              a.e += y.angle({
+	              a.e += y$1.angle({
 	                x: a.x,
 	                y: a.y
 	              }, t, this.get(1));
@@ -6315,7 +6315,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    } while (r < 1);
 	    return e;
 	  }
-	}
+	};
 	const R = (t, e, i) => {
 	    if (t.x === e.x) return {
 	      x: t.x,
@@ -6333,7 +6333,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      y: n * (o - t.x) + t.y
 	    };
 	  },
-	  S = (t, e) => Math.sqrt(Math.pow(e.x - t.x, 2) + Math.pow(e.y - t.y, 2)),
+	  S$1 = (t, e) => Math.sqrt(Math.pow(e.x - t.x, 2) + Math.pow(e.y - t.y, 2)),
 	  P = (t, e, i) => {
 	    const n = Math.min(t.x, e.x, i.x),
 	      r = Math.max(t.x, e.x, i.x),
@@ -6343,7 +6343,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      height: Math.max(t.y, e.y, i.y) - o
 	    };
 	  },
-	  M = (t, e, i) => {
+	  M$1 = (t, e, i) => {
 	    const n = Object.assign({}, t),
 	      r = {
 	        x: e.x - t.x,
@@ -6356,7 +6356,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    }
 	    return n;
 	  },
-	  O = (t, e) => {
+	  O$1 = (t, e) => {
 	    const [i, n, r] = t,
 	      [o, s, a] = e,
 	      h = .1 / Math.abs([...t, ...e].reduce((t, e) => Math.min(t, e.x, e.y), -1)),
@@ -6387,7 +6387,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      d = g.z;
 	    return [f, x.x, y, x.y, d, x.z];
 	  },
-	  B = (t, e, i, n, r = .1) => {
+	  B$1 = (t, e, i, n, r = .1) => {
 	    const o = (t, e, i) => Math.abs(t.x * (e.y - i.y) + e.x * (i.y - t.y) + i.x * (t.y - e.y)) / 2,
 	      s = o(e, i, n);
 	    return o(e, i, t) + o(i, n, t) + o(n, e, t) <= s + r;
@@ -6495,9 +6495,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return A(t, e, i, n, {
 	      calcBoundingBox: P,
 	      calcPerpendicularIntersection: R,
-	      calcCoordDistance: S,
-	      calcRelativeCoord: M,
-	      calcMatrix: O
+	      calcCoordDistance: S$1,
+	      calcRelativeCoord: M$1,
+	      calcMatrix: O$1
 	    });
 	  },
 	  F = (t, e, i, n) => {
@@ -6628,7 +6628,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  U = "WORKER_MESSAGE",
 	  W = "JOB_RESULT",
 	  G = t => t instanceof ArrayBuffer || t instanceof MessagePort || self.ImageBitmap && t instanceof ImageBitmap,
-	  k = () => {
+	  k$1 = () => {
 	    const t = [];
 	    let e,
 	      i = new Map();
@@ -6678,7 +6678,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    };
 	    return n;
 	  },
-	  N = (t, i, n, r) => e(void 0, void 0, void 0, function* () {
+	  N = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
 	    const {
 	        regionPoints: e,
 	        renderingConfig: o,
@@ -6698,15 +6698,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        regionPoints: e,
 	        originalRegionPoints: a
 	      },
-	      c = k().collect({
+	      c = k$1().collect({
 	        warpvas: h,
 	        options: r,
 	        createWarpedCanvas: A,
 	        calcBoundingBox: P,
 	        calcPerpendicularIntersection: R,
-	        calcCoordDistance: S,
-	        calcRelativeCoord: M,
-	        calcMatrix: O
+	        calcCoordDistance: S$1,
+	        calcRelativeCoord: M$1,
+	        calcMatrix: O$1
 	      }).create((t, {
 	        collections: e
 	      }) => {
@@ -6741,7 +6741,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      l = yield c.run(i);
 	    return c.terminate(), (n = null != n ? n : document.createElement("canvas")).width = l.width, n.height = l.height, n.getContext("2d").drawImage(l, 0, 0), n;
 	  }),
-	  H = (t, i, n, r) => e(void 0, void 0, void 0, function* () {
+	  H = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
 	    const {
 	        regionPoints: e,
 	        renderingConfig: o,
@@ -6761,7 +6761,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        regionPoints: e,
 	        originalRegionPoints: a
 	      },
-	      c = k().collect({
+	      c = k$1().collect({
 	        warpvas: h,
 	        options: r,
 	        createWarpedCanvas: F
@@ -7023,7 +7023,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      if (1 === e) return void n.vertical.push(t.right);
 	      const i = t.top.get(e),
 	        r = t.bottom.get(e),
-	        o = new T([i, {
+	        o = new T$1([i, {
 	          x: i.x + ((t.left.points[1].x - t.left.points[0].x) * (1 - e) + (t.right.points[1].x - t.right.points[0].x) * e),
 	          y: i.y + ((t.left.points[1].y - t.left.points[0].y) * (1 - e) + (t.right.points[1].y - t.right.points[0].y) * e)
 	        }, {
@@ -7036,7 +7036,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      if (1 === e) return void n.horizontal.push(t.bottom);
 	      const i = t.left.get(e),
 	        r = t.right.get(e),
-	        o = new T([i, {
+	        o = new T$1([i, {
 	          x: i.x + ((t.top.points[1].x - t.top.points[0].x) * (1 - e) + (t.bottom.points[1].x - t.bottom.points[0].x) * e),
 	          y: i.y + ((t.top.points[1].y - t.top.points[0].y) * (1 - e) + (t.bottom.points[1].y - t.bottom.points[0].y) * e)
 	        }, {
@@ -7315,7 +7315,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          }
 	          if (!h[c]) {
 	            const e = t[c];
-	            h[c] = new T(e[0].x, e[0].y, e[1].x, e[1].y, e[2].x, e[2].y, e[3].x, e[3].y);
+	            h[c] = new T$1(e[0].x, e[0].y, e[1].x, e[1].y, e[2].x, e[2].y, e[3].x, e[3].y);
 	          }
 	        }
 	        e[e.length - 1].push(h);
@@ -7373,8 +7373,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    let e = null;
 	    try {
 	      this.forEachSplitRegion(([i, n, r, o], s, a, h, c, l) => {
-	        const u = B(t, i, n, o),
-	          p = B(t, r, n, o);
+	        const u = B$1(t, i, n, o),
+	          p = B$1(t, r, n, o);
 	        if (u || p) throw e = {
 	          rowIndex: c,
 	          colIndex: l,
@@ -7436,10 +7436,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          horizontal: n,
 	          vertical: r
 	        } = this._generateRegionCurves({
-	          left: new T(t[e].left),
-	          right: new T(t[e].right),
-	          top: new T(t[e].top),
-	          bottom: new T(t[e].bottom)
+	          left: new T$1(t[e].left),
+	          right: new T$1(t[e].right),
+	          top: new T$1(t[e].top),
+	          bottom: new T$1(t[e].bottom)
 	        }, [0, a, 1], [0, 1]),
 	        {
 	          left: o,
@@ -7609,7 +7609,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    }
 	  }
 	  renderWithWorker(t = !0) {
-	    return e(this, void 0, void 0, function* () {
+	    return e$1(this, void 0, void 0, function* () {
 	      const {
 	          outputCanvas: e,
 	          options: i
@@ -7632,6 +7632,1306 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    this._safeModeEnabled = !1, this._cacheInputCanvas && (this._cacheInputCanvas.width = 0, this._cacheInputCanvas.height = 0, this._cacheInputCanvas = null), this._cacheOutputCanvas && (this._cacheOutputCanvas.width = 0, this._cacheOutputCanvas.height = 0, this._cacheOutputCanvas = null), this._cacheSourceImageData = null, this._cacheSourceSize = null, this.splitPoints = [], this.originalRegions = [], this.originalRegionPoints = [], this.regionBoundaryCurves = [], this.regionCurves = [], this.regionPoints = [];
 	  }
 	}
+
+	"function" == typeof SuppressedError && SuppressedError;
+	const n = (t, n, e) => {
+	    if (t.x === n.x) return {
+	      x: t.x,
+	      y: e.y
+	    };
+	    if (t.y === n.y) return {
+	      x: e.x,
+	      y: t.y
+	    };
+	    const r = (n.y - t.y) / (n.x - t.x),
+	      i = -1 / r,
+	      s = (-r * t.x + t.y + i * e.x - e.y) / (i - r);
+	    return {
+	      x: s,
+	      y: r * (s - t.x) + t.y
+	    };
+	  },
+	  e = (t, n) => Math.sqrt(Math.pow(n.x - t.x, 2) + Math.pow(n.y - t.y, 2)),
+	  r = (t, n, e) => {
+	    const r = Object.assign({}, t),
+	      i = {
+	        x: n.x - t.x,
+	        y: n.y - t.y
+	      };
+	    if (0 === i.x && 0 === i.y) return r;
+	    if (0 === i.x) r.y += e * Math.sign(i.y);else if (0 === i.y) r.x += e * Math.sign(i.x);else {
+	      const t = Math.sqrt(Math.pow(i.x, 2) + Math.pow(i.y, 2));
+	      r.x += i.x * (e / t), r.y += i.y * (e / t);
+	    }
+	    return r;
+	  };
+	var i,
+	  s,
+	  o = Object.freeze({
+	    __proto__: null,
+	    calcBoundingBox: (t, n, e) => {
+	      const r = Math.min(t.x, n.x, e.x),
+	        i = Math.max(t.x, n.x, e.x),
+	        s = Math.min(t.y, n.y, e.y);
+	      return {
+	        width: i - r,
+	        height: Math.max(t.y, n.y, e.y) - s
+	      };
+	    },
+	    calcCoordDistance: e,
+	    calcExpandCoord: (t, i, s, o = 1) => {
+	      const c = n(i, s, t),
+	        u = e(t, c),
+	        a = r(t, c, u + o);
+	      return {
+	        x: a.x - c.x + i.x,
+	        y: a.y - c.y + i.y
+	      };
+	    },
+	    calcIntersection: (t, n, e, r) => {
+	      const i = (t, n) => Math.abs(t - n) < Math.pow(.1, 12);
+	      if (i(t.x, n.x) && i(e.x, r.x)) return null;
+	      if (i(t.y, n.y) && i(e.y, r.y)) return null;
+	      const s = 1e4 * (n.y - t.y) / Math.round(1e4 * (n.x - t.x)),
+	        o = 1e4 * (r.y - e.y) / Math.round(1e4 * (r.x - e.x)),
+	        c = t.y - s * t.x,
+	        u = e.y - o * e.x;
+	      if (Math.abs(s) === 1 / 0) return {
+	        x: t.x,
+	        y: o * t.x + u
+	      };
+	      if (Math.abs(o) === 1 / 0) return {
+	        x: e.x,
+	        y: s * e.x + c
+	      };
+	      const a = (u - c) / (s - o);
+	      return {
+	        x: a,
+	        y: s * a + c
+	      };
+	    },
+	    calcMatrix: (t, n) => {
+	      const [e, r, i] = t,
+	        [s, o, c] = n,
+	        u = .1 / Math.abs([...t, ...n].reduce((t, n) => Math.min(t, n.x, n.y), -1)),
+	        a = (t, n, e) => {
+	          const [r, i, s, o] = t.map(Number),
+	            [c, u, a, h] = n.map(Number),
+	            [l, x, y, f] = e.map(Number),
+	            p = s - i * a / u,
+	            m = a - u * y / x,
+	            d = h - u * f / x,
+	            g = c - u * l / x,
+	            z = (p / m * d - (o - i * h / u)) / (p / m * g - (r - i * c / u)),
+	            b = (d - g * z) / m;
+	          return {
+	            x: z,
+	            y: (o - r * z - s * b) / i,
+	            z: b
+	          };
+	        },
+	        h = [s.x + u, s.y + u, 1, e.x + u],
+	        l = [o.x + u, o.y + u, 1, r.x + u],
+	        x = [c.x + u, c.y + u, 1, i.x + u],
+	        y = a(h, l, x);
+	      h[3] = e.y + u, l[3] = r.y + u, x[3] = i.y + u;
+	      const f = a(h, l, x),
+	        p = y.x,
+	        m = y.y,
+	        d = y.z;
+	      return [p, f.x, m, f.y, d, f.z];
+	    },
+	    calcPerpendicularIntersection: n,
+	    calcRelativeCoord: r,
+	    isTriangleContainsPoint: (t, n, e, r, i = .1) => {
+	      const s = (t, n, e) => Math.abs(t.x * (n.y - e.y) + n.x * (e.y - t.y) + e.x * (t.y - n.y)) / 2,
+	        o = s(n, e, r);
+	      return s(n, e, t) + s(e, r, t) + s(r, n, t) <= o + i;
+	    }
+	  });
+	!function (t) {
+	  t.TOP_LEFT = "tl", t.TOP_RIGHT = "tr", t.BOTTOM_LEFT = "bl", t.BOTTOM_RIGHT = "br";
+	}(i || (i = {})), function (t) {
+	  t.TOP = "top", t.BOTTOM = "bottom", t.LEFT = "left", t.RIGHT = "right";
+	}(s || (s = {}));
+	const {
+	  abs: c,
+	  cos: u,
+	  sin: a,
+	  acos: h,
+	  atan2: l,
+	  sqrt: x,
+	  pow: y
+	} = Math;
+	function f(t) {
+	  return t < 0 ? -y(-t, 1 / 3) : y(t, 1 / 3);
+	}
+	const p = Math.PI,
+	  m = 2 * p,
+	  d = p / 2,
+	  g = Number.MAX_SAFE_INTEGER || 9007199254740991,
+	  z = Number.MIN_SAFE_INTEGER || -9007199254740991,
+	  b = {
+	    x: 0,
+	    y: 0,
+	    z: 0
+	  },
+	  v = {
+	    Tvalues: [-.06405689286260563, .06405689286260563, -.1911188674736163, .1911188674736163, -.3150426796961634, .3150426796961634, -.4337935076260451, .4337935076260451, -.5454214713888396, .5454214713888396, -.6480936519369755, .6480936519369755, -.7401241915785544, .7401241915785544, -.820001985973903, .820001985973903, -.8864155270044011, .8864155270044011, -.9382745520027328, .9382745520027328, -.9747285559713095, .9747285559713095, -.9951872199970213, .9951872199970213],
+	    Cvalues: [.12793819534675216, .12793819534675216, .1258374563468283, .1258374563468283, .12167047292780339, .12167047292780339, .1155056680537256, .1155056680537256, .10744427011596563, .10744427011596563, .09761865210411388, .09761865210411388, .08619016153195327, .08619016153195327, .0733464814110803, .0733464814110803, .05929858491543678, .05929858491543678, .04427743881741981, .04427743881741981, .028531388628933663, .028531388628933663, .0123412297999872, .0123412297999872],
+	    arcfn: function (t, n) {
+	      const e = n(t);
+	      let r = e.x * e.x + e.y * e.y;
+	      return void 0 !== e.z && (r += e.z * e.z), x(r);
+	    },
+	    compute: function (t, n, e) {
+	      if (0 === t) return n[0].t = 0, n[0];
+	      const r = n.length - 1;
+	      if (1 === t) return n[r].t = 1, n[r];
+	      const i = 1 - t;
+	      let s = n;
+	      if (0 === r) return n[0].t = t, n[0];
+	      if (1 === r) {
+	        const n = {
+	          x: i * s[0].x + t * s[1].x,
+	          y: i * s[0].y + t * s[1].y,
+	          t: t
+	        };
+	        return e && (n.z = i * s[0].z + t * s[1].z), n;
+	      }
+	      if (r < 4) {
+	        let n,
+	          o,
+	          c,
+	          u = i * i,
+	          a = t * t,
+	          h = 0;
+	        2 === r ? (s = [s[0], s[1], s[2], b], n = u, o = i * t * 2, c = a) : 3 === r && (n = u * i, o = u * t * 3, c = i * a * 3, h = t * a);
+	        const l = {
+	          x: n * s[0].x + o * s[1].x + c * s[2].x + h * s[3].x,
+	          y: n * s[0].y + o * s[1].y + c * s[2].y + h * s[3].y,
+	          t: t
+	        };
+	        return e && (l.z = n * s[0].z + o * s[1].z + c * s[2].z + h * s[3].z), l;
+	      }
+	      const o = JSON.parse(JSON.stringify(n));
+	      for (; o.length > 1;) {
+	        for (let n = 0; n < o.length - 1; n++) o[n] = {
+	          x: o[n].x + (o[n + 1].x - o[n].x) * t,
+	          y: o[n].y + (o[n + 1].y - o[n].y) * t
+	        }, void 0 !== o[n].z && (o[n].z = o[n].z + (o[n + 1].z - o[n].z) * t);
+	        o.splice(o.length - 1, 1);
+	      }
+	      return o[0].t = t, o[0];
+	    },
+	    computeWithRatios: function (t, n, e, r) {
+	      const i = 1 - t,
+	        s = e,
+	        o = n;
+	      let c,
+	        u = s[0],
+	        a = s[1],
+	        h = s[2],
+	        l = s[3];
+	      return u *= i, a *= t, 2 === o.length ? (c = u + a, {
+	        x: (u * o[0].x + a * o[1].x) / c,
+	        y: (u * o[0].y + a * o[1].y) / c,
+	        z: !!r && (u * o[0].z + a * o[1].z) / c,
+	        t: t
+	      }) : (u *= i, a *= 2 * i, h *= t * t, 3 === o.length ? (c = u + a + h, {
+	        x: (u * o[0].x + a * o[1].x + h * o[2].x) / c,
+	        y: (u * o[0].y + a * o[1].y + h * o[2].y) / c,
+	        z: !!r && (u * o[0].z + a * o[1].z + h * o[2].z) / c,
+	        t: t
+	      }) : (u *= i, a *= 1.5 * i, h *= 3 * i, l *= t * t * t, 4 === o.length ? (c = u + a + h + l, {
+	        x: (u * o[0].x + a * o[1].x + h * o[2].x + l * o[3].x) / c,
+	        y: (u * o[0].y + a * o[1].y + h * o[2].y + l * o[3].y) / c,
+	        z: !!r && (u * o[0].z + a * o[1].z + h * o[2].z + l * o[3].z) / c,
+	        t: t
+	      }) : void 0));
+	    },
+	    derive: function (t, n) {
+	      const e = [];
+	      for (let r = t, i = r.length, s = i - 1; i > 1; i--, s--) {
+	        const t = [];
+	        for (let e, i = 0; i < s; i++) e = {
+	          x: s * (r[i + 1].x - r[i].x),
+	          y: s * (r[i + 1].y - r[i].y)
+	        }, n && (e.z = s * (r[i + 1].z - r[i].z)), t.push(e);
+	        e.push(t), r = t;
+	      }
+	      return e;
+	    },
+	    between: function (t, n, e) {
+	      return n <= t && t <= e || v.approximately(t, n) || v.approximately(t, e);
+	    },
+	    approximately: function (t, n, e) {
+	      return c(t - n) <= (e || 1e-6);
+	    },
+	    length: function (t) {
+	      const n = v.Tvalues.length;
+	      let e = 0;
+	      for (let r, i = 0; i < n; i++) r = .5 * v.Tvalues[i] + .5, e += v.Cvalues[i] * v.arcfn(r, t);
+	      return .5 * e;
+	    },
+	    map: function (t, n, e, r, i) {
+	      return r + (i - r) * ((t - n) / (e - n));
+	    },
+	    lerp: function (t, n, e) {
+	      const r = {
+	        x: n.x + t * (e.x - n.x),
+	        y: n.y + t * (e.y - n.y)
+	      };
+	      return void 0 !== n.z && void 0 !== e.z && (r.z = n.z + t * (e.z - n.z)), r;
+	    },
+	    pointToString: function (t) {
+	      let n = t.x + "/" + t.y;
+	      return void 0 !== t.z && (n += "/" + t.z), n;
+	    },
+	    pointsToString: function (t) {
+	      return "[" + t.map(v.pointToString).join(", ") + "]";
+	    },
+	    copy: function (t) {
+	      return JSON.parse(JSON.stringify(t));
+	    },
+	    angle: function (t, n, e) {
+	      const r = n.x - t.x,
+	        i = n.y - t.y,
+	        s = e.x - t.x,
+	        o = e.y - t.y;
+	      return l(r * o - i * s, r * s + i * o);
+	    },
+	    round: function (t, n) {
+	      const e = "" + t,
+	        r = e.indexOf(".");
+	      return parseFloat(e.substring(0, r + 1 + n));
+	    },
+	    dist: function (t, n) {
+	      const e = t.x - n.x,
+	        r = t.y - n.y;
+	      return x(e * e + r * r);
+	    },
+	    closest: function (t, n) {
+	      let e,
+	        r,
+	        i = y(2, 63);
+	      return t.forEach(function (t, s) {
+	        r = v.dist(n, t), r < i && (i = r, e = s);
+	      }), {
+	        mdist: i,
+	        mpos: e
+	      };
+	    },
+	    abcratio: function (t, n) {
+	      if (2 !== n && 3 !== n) return !1;
+	      if (void 0 === t) t = .5;else if (0 === t || 1 === t) return t;
+	      const e = y(t, n) + y(1 - t, n);
+	      return c((e - 1) / e);
+	    },
+	    projectionratio: function (t, n) {
+	      if (2 !== n && 3 !== n) return !1;
+	      if (void 0 === t) t = .5;else if (0 === t || 1 === t) return t;
+	      const e = y(1 - t, n);
+	      return e / (y(t, n) + e);
+	    },
+	    lli8: function (t, n, e, r, i, s, o, c) {
+	      const u = (t - e) * (s - c) - (n - r) * (i - o);
+	      return 0 != u && {
+	        x: ((t * r - n * e) * (i - o) - (t - e) * (i * c - s * o)) / u,
+	        y: ((t * r - n * e) * (s - c) - (n - r) * (i * c - s * o)) / u
+	      };
+	    },
+	    lli4: function (t, n, e, r) {
+	      const i = t.x,
+	        s = t.y,
+	        o = n.x,
+	        c = n.y,
+	        u = e.x,
+	        a = e.y,
+	        h = r.x,
+	        l = r.y;
+	      return v.lli8(i, s, o, c, u, a, h, l);
+	    },
+	    lli: function (t, n) {
+	      return v.lli4(t, t.c, n, n.c);
+	    },
+	    makeline: function (t, n) {
+	      return new I(t.x, t.y, (t.x + n.x) / 2, (t.y + n.y) / 2, n.x, n.y);
+	    },
+	    findbbox: function (t) {
+	      let n = g,
+	        e = g,
+	        r = z,
+	        i = z;
+	      return t.forEach(function (t) {
+	        const s = t.bbox();
+	        n > s.x.min && (n = s.x.min), e > s.y.min && (e = s.y.min), r < s.x.max && (r = s.x.max), i < s.y.max && (i = s.y.max);
+	      }), {
+	        x: {
+	          min: n,
+	          mid: (n + r) / 2,
+	          max: r,
+	          size: r - n
+	        },
+	        y: {
+	          min: e,
+	          mid: (e + i) / 2,
+	          max: i,
+	          size: i - e
+	        }
+	      };
+	    },
+	    shapeintersections: function (t, n, e, r, i) {
+	      if (!v.bboxoverlap(n, r)) return [];
+	      const s = [],
+	        o = [t.startcap, t.forward, t.back, t.endcap],
+	        c = [e.startcap, e.forward, e.back, e.endcap];
+	      return o.forEach(function (n) {
+	        n.virtual || c.forEach(function (r) {
+	          if (r.virtual) return;
+	          const o = n.intersects(r, i);
+	          o.length > 0 && (o.c1 = n, o.c2 = r, o.s1 = t, o.s2 = e, s.push(o));
+	        });
+	      }), s;
+	    },
+	    makeshape: function (t, n, e) {
+	      const r = n.points.length,
+	        i = t.points.length,
+	        s = v.makeline(n.points[r - 1], t.points[0]),
+	        o = v.makeline(t.points[i - 1], n.points[0]),
+	        c = {
+	          startcap: s,
+	          forward: t,
+	          back: n,
+	          endcap: o,
+	          bbox: v.findbbox([s, t, n, o]),
+	          intersections: function (t) {
+	            return v.shapeintersections(c, c.bbox, t, t.bbox, e);
+	          }
+	        };
+	      return c;
+	    },
+	    getminmax: function (t, n, e) {
+	      if (!e) return {
+	        min: 0,
+	        max: 0
+	      };
+	      let r,
+	        i,
+	        s = g,
+	        o = z;
+	      -1 === e.indexOf(0) && (e = [0].concat(e)), -1 === e.indexOf(1) && e.push(1);
+	      for (let c = 0, u = e.length; c < u; c++) r = e[c], i = t.get(r), i[n] < s && (s = i[n]), i[n] > o && (o = i[n]);
+	      return {
+	        min: s,
+	        mid: (s + o) / 2,
+	        max: o,
+	        size: o - s
+	      };
+	    },
+	    align: function (t, n) {
+	      const e = n.p1.x,
+	        r = n.p1.y,
+	        i = -l(n.p2.y - r, n.p2.x - e);
+	      return t.map(function (t) {
+	        return {
+	          x: (t.x - e) * u(i) - (t.y - r) * a(i),
+	          y: (t.x - e) * a(i) + (t.y - r) * u(i)
+	        };
+	      });
+	    },
+	    roots: function (t, n) {
+	      n = n || {
+	        p1: {
+	          x: 0,
+	          y: 0
+	        },
+	        p2: {
+	          x: 1,
+	          y: 0
+	        }
+	      };
+	      const e = t.length - 1,
+	        r = v.align(t, n),
+	        i = function (t) {
+	          return 0 <= t && t <= 1;
+	        };
+	      if (2 === e) {
+	        const t = r[0].y,
+	          n = r[1].y,
+	          e = r[2].y,
+	          s = t - 2 * n + e;
+	        if (0 !== s) {
+	          const r = -x(n * n - t * e),
+	            o = -t + n;
+	          return [-(r + o) / s, -(-r + o) / s].filter(i);
+	        }
+	        return n !== e && 0 === s ? [(2 * n - e) / (2 * n - 2 * e)].filter(i) : [];
+	      }
+	      const s = r[0].y,
+	        o = r[1].y,
+	        c = r[2].y;
+	      let a = 3 * o - s - 3 * c + r[3].y,
+	        l = 3 * s - 6 * o + 3 * c,
+	        y = -3 * s + 3 * o,
+	        p = s;
+	      if (v.approximately(a, 0)) {
+	        if (v.approximately(l, 0)) return v.approximately(y, 0) ? [] : [-p / y].filter(i);
+	        const t = x(y * y - 4 * l * p),
+	          n = 2 * l;
+	        return [(t - y) / n, (-y - t) / n].filter(i);
+	      }
+	      l /= a, y /= a, p /= a;
+	      const d = (3 * y - l * l) / 3,
+	        g = d / 3,
+	        z = (2 * l * l * l - 9 * l * y + 27 * p) / 27,
+	        b = z / 2,
+	        _ = b * b + g * g * g;
+	      let w, E, M, T, O;
+	      if (_ < 0) {
+	        const t = -d / 3,
+	          n = x(t * t * t),
+	          e = -z / (2 * n),
+	          r = h(e < -1 ? -1 : e > 1 ? 1 : e),
+	          s = 2 * f(n);
+	        return M = s * u(r / 3) - l / 3, T = s * u((r + m) / 3) - l / 3, O = s * u((r + 2 * m) / 3) - l / 3, [M, T, O].filter(i);
+	      }
+	      if (0 === _) return w = b < 0 ? f(-b) : -f(b), M = 2 * w - l / 3, T = -w - l / 3, [M, T].filter(i);
+	      {
+	        const t = x(_);
+	        return w = f(-b + t), E = f(b + t), [w - E - l / 3].filter(i);
+	      }
+	    },
+	    droots: function (t) {
+	      if (3 === t.length) {
+	        const n = t[0],
+	          e = t[1],
+	          r = t[2],
+	          i = n - 2 * e + r;
+	        if (0 !== i) {
+	          const t = -x(e * e - n * r),
+	            s = -n + e;
+	          return [-(t + s) / i, -(-t + s) / i];
+	        }
+	        return e !== r && 0 === i ? [(2 * e - r) / (2 * (e - r))] : [];
+	      }
+	      if (2 === t.length) {
+	        const n = t[0],
+	          e = t[1];
+	        return n !== e ? [n / (n - e)] : [];
+	      }
+	      return [];
+	    },
+	    curvature: function (t, n, e, r, i) {
+	      let s,
+	        o,
+	        u,
+	        a,
+	        h = 0,
+	        l = 0;
+	      const f = v.compute(t, n),
+	        p = v.compute(t, e),
+	        m = f.x * f.x + f.y * f.y;
+	      if (r ? (s = x(y(f.y * p.z - p.y * f.z, 2) + y(f.z * p.x - p.z * f.x, 2) + y(f.x * p.y - p.x * f.y, 2)), o = y(m + f.z * f.z, 1.5)) : (s = f.x * p.y - f.y * p.x, o = y(m, 1.5)), 0 === s || 0 === o) return {
+	        k: 0,
+	        r: 0
+	      };
+	      if (h = s / o, l = o / s, !i) {
+	        const i = v.curvature(t - .001, n, e, r, !0).k,
+	          s = v.curvature(t + .001, n, e, r, !0).k;
+	        a = (s - h + (h - i)) / 2, u = (c(s - h) + c(h - i)) / 2;
+	      }
+	      return {
+	        k: h,
+	        r: l,
+	        dk: a,
+	        adk: u
+	      };
+	    },
+	    inflections: function (t) {
+	      if (t.length < 4) return [];
+	      const n = v.align(t, {
+	          p1: t[0],
+	          p2: t.slice(-1)[0]
+	        }),
+	        e = n[2].x * n[1].y,
+	        r = n[3].x * n[1].y,
+	        i = n[1].x * n[2].y,
+	        s = 18 * (-3 * e + 2 * r + 3 * i - n[3].x * n[2].y),
+	        o = 18 * (3 * e - r - 3 * i),
+	        c = 18 * (i - e);
+	      if (v.approximately(s, 0)) {
+	        if (!v.approximately(o, 0)) {
+	          let t = -c / o;
+	          if (0 <= t && t <= 1) return [t];
+	        }
+	        return [];
+	      }
+	      const u = 2 * s;
+	      if (v.approximately(u, 0)) return [];
+	      const a = o * o - 4 * s * c;
+	      if (a < 0) return [];
+	      const h = Math.sqrt(a);
+	      return [(h - o) / u, -(o + h) / u].filter(function (t) {
+	        return 0 <= t && t <= 1;
+	      });
+	    },
+	    bboxoverlap: function (t, n) {
+	      const e = ["x", "y"],
+	        r = e.length;
+	      for (let i, s, o, u, a = 0; a < r; a++) if (i = e[a], s = t[i].mid, o = n[i].mid, u = (t[i].size + n[i].size) / 2, c(s - o) >= u) return !1;
+	      return !0;
+	    },
+	    expandbox: function (t, n) {
+	      n.x.min < t.x.min && (t.x.min = n.x.min), n.y.min < t.y.min && (t.y.min = n.y.min), n.z && n.z.min < t.z.min && (t.z.min = n.z.min), n.x.max > t.x.max && (t.x.max = n.x.max), n.y.max > t.y.max && (t.y.max = n.y.max), n.z && n.z.max > t.z.max && (t.z.max = n.z.max), t.x.mid = (t.x.min + t.x.max) / 2, t.y.mid = (t.y.min + t.y.max) / 2, t.z && (t.z.mid = (t.z.min + t.z.max) / 2), t.x.size = t.x.max - t.x.min, t.y.size = t.y.max - t.y.min, t.z && (t.z.size = t.z.max - t.z.min);
+	    },
+	    pairiteration: function (t, n, e) {
+	      const r = t.bbox(),
+	        i = n.bbox(),
+	        s = 1e5,
+	        o = e || .5;
+	      if (r.x.size + r.y.size < o && i.x.size + i.y.size < o) return [(s * (t._t1 + t._t2) / 2 | 0) / s + "/" + (s * (n._t1 + n._t2) / 2 | 0) / s];
+	      let c = t.split(.5),
+	        u = n.split(.5),
+	        a = [{
+	          left: c.left,
+	          right: u.left
+	        }, {
+	          left: c.left,
+	          right: u.right
+	        }, {
+	          left: c.right,
+	          right: u.right
+	        }, {
+	          left: c.right,
+	          right: u.left
+	        }];
+	      a = a.filter(function (t) {
+	        return v.bboxoverlap(t.left.bbox(), t.right.bbox());
+	      });
+	      let h = [];
+	      return 0 === a.length || (a.forEach(function (t) {
+	        h = h.concat(v.pairiteration(t.left, t.right, o));
+	      }), h = h.filter(function (t, n) {
+	        return h.indexOf(t) === n;
+	      })), h;
+	    },
+	    getccenter: function (t, n, e) {
+	      const r = n.x - t.x,
+	        i = n.y - t.y,
+	        s = e.x - n.x,
+	        o = e.y - n.y,
+	        c = r * u(d) - i * a(d),
+	        h = r * a(d) + i * u(d),
+	        x = s * u(d) - o * a(d),
+	        y = s * a(d) + o * u(d),
+	        f = (t.x + n.x) / 2,
+	        p = (t.y + n.y) / 2,
+	        g = (n.x + e.x) / 2,
+	        z = (n.y + e.y) / 2,
+	        b = f + c,
+	        _ = p + h,
+	        w = g + x,
+	        E = z + y,
+	        M = v.lli8(f, p, b, _, g, z, w, E),
+	        T = v.dist(M, t);
+	      let O,
+	        C = l(t.y - M.y, t.x - M.x),
+	        k = l(n.y - M.y, n.x - M.x),
+	        S = l(e.y - M.y, e.x - M.x);
+	      return C < S ? ((C > k || k > S) && (C += m), C > S && (O = S, S = C, C = O)) : S < k && k < C ? (O = S, S = C, C = O) : S += m, M.s = C, M.e = S, M.r = T, M;
+	    },
+	    numberSort: function (t, n) {
+	      return t - n;
+	    }
+	  };
+	class _ {
+	  constructor(t) {
+	    this.curves = [], this._3d = !1, t && (this.curves = t, this._3d = this.curves[0]._3d);
+	  }
+	  valueOf() {
+	    return this.toString();
+	  }
+	  toString() {
+	    return "[" + this.curves.map(function (t) {
+	      return v.pointsToString(t.points);
+	    }).join(", ") + "]";
+	  }
+	  addCurve(t) {
+	    this.curves.push(t), this._3d = this._3d || t._3d;
+	  }
+	  length() {
+	    return this.curves.map(function (t) {
+	      return t.length();
+	    }).reduce(function (t, n) {
+	      return t + n;
+	    });
+	  }
+	  curve(t) {
+	    return this.curves[t];
+	  }
+	  bbox() {
+	    const t = this.curves;
+	    for (var n = t[0].bbox(), e = 1; e < t.length; e++) v.expandbox(n, t[e].bbox());
+	    return n;
+	  }
+	  offset(t) {
+	    const n = [];
+	    return this.curves.forEach(function (e) {
+	      n.push(...e.offset(t));
+	    }), new _(n);
+	  }
+	}
+	const {
+	    abs: w,
+	    min: E,
+	    max: M,
+	    cos: T,
+	    sin: O,
+	    acos: C,
+	    sqrt: k
+	  } = Math,
+	  S = Math.PI;
+	class I {
+	  constructor(t) {
+	    let n = t && t.forEach ? t : Array.from(arguments).slice(),
+	      e = !1;
+	    if ("object" == typeof n[0]) {
+	      e = n.length;
+	      const t = [];
+	      n.forEach(function (n) {
+	        ["x", "y", "z"].forEach(function (e) {
+	          void 0 !== n[e] && t.push(n[e]);
+	        });
+	      }), n = t;
+	    }
+	    let r = !1;
+	    const i = n.length;
+	    if (e) {
+	      if (e > 4) {
+	        if (1 !== arguments.length) throw new Error("Only new Bezier(point[]) is accepted for 4th and higher order curves");
+	        r = !0;
+	      }
+	    } else if (6 !== i && 8 !== i && 9 !== i && 12 !== i && 1 !== arguments.length) throw new Error("Only new Bezier(point[]) is accepted for 4th and higher order curves");
+	    const s = this._3d = !r && (9 === i || 12 === i) || t && t[0] && void 0 !== t[0].z,
+	      o = this.points = [];
+	    for (let t = 0, e = s ? 3 : 2; t < i; t += e) {
+	      var c = {
+	        x: n[t],
+	        y: n[t + 1]
+	      };
+	      s && (c.z = n[t + 2]), o.push(c);
+	    }
+	    const u = this.order = o.length - 1,
+	      a = this.dims = ["x", "y"];
+	    s && a.push("z"), this.dimlen = a.length;
+	    const h = v.align(o, {
+	        p1: o[0],
+	        p2: o[u]
+	      }),
+	      l = v.dist(o[0], o[u]);
+	    this._linear = h.reduce((t, n) => t + w(n.y), 0) < l / 50, this._lut = [], this._t1 = 0, this._t2 = 1, this.update();
+	  }
+	  static quadraticFromPoints(t, n, e, r) {
+	    if (void 0 === r && (r = .5), 0 === r) return new I(n, n, e);
+	    if (1 === r) return new I(t, n, n);
+	    const i = I.getABC(2, t, n, e, r);
+	    return new I(t, i.A, e);
+	  }
+	  static cubicFromPoints(t, n, e, r, i) {
+	    void 0 === r && (r = .5);
+	    const s = I.getABC(3, t, n, e, r);
+	    void 0 === i && (i = v.dist(n, s.C));
+	    const o = i * (1 - r) / r,
+	      c = v.dist(t, e),
+	      u = (e.x - t.x) / c,
+	      a = (e.y - t.y) / c,
+	      h = i * u,
+	      l = i * a,
+	      x = o * u,
+	      y = o * a,
+	      f = n.x - h,
+	      p = n.y - l,
+	      m = n.x + x,
+	      d = n.y + y,
+	      g = s.A,
+	      z = g.x + (f - g.x) / (1 - r),
+	      b = g.y + (p - g.y) / (1 - r),
+	      _ = g.x + (m - g.x) / r,
+	      w = g.y + (d - g.y) / r,
+	      E = {
+	        x: t.x + (z - t.x) / r,
+	        y: t.y + (b - t.y) / r
+	      },
+	      M = {
+	        x: e.x + (_ - e.x) / (1 - r),
+	        y: e.y + (w - e.y) / (1 - r)
+	      };
+	    return new I(t, E, M, e);
+	  }
+	  static getUtils() {
+	    return v;
+	  }
+	  getUtils() {
+	    return I.getUtils();
+	  }
+	  static get PolyBezier() {
+	    return _;
+	  }
+	  valueOf() {
+	    return this.toString();
+	  }
+	  toString() {
+	    return v.pointsToString(this.points);
+	  }
+	  toSVG() {
+	    if (this._3d) return !1;
+	    const t = this.points,
+	      n = ["M", t[0].x, t[0].y, 2 === this.order ? "Q" : "C"];
+	    for (let e = 1, r = t.length; e < r; e++) n.push(t[e].x), n.push(t[e].y);
+	    return n.join(" ");
+	  }
+	  setRatios(t) {
+	    if (t.length !== this.points.length) throw new Error("incorrect number of ratio values");
+	    this.ratios = t, this._lut = [];
+	  }
+	  verify() {
+	    const t = this.coordDigest();
+	    t !== this._print && (this._print = t, this.update());
+	  }
+	  coordDigest() {
+	    return this.points.map(function (t, n) {
+	      return "" + n + t.x + t.y + (t.z ? t.z : 0);
+	    }).join("");
+	  }
+	  update() {
+	    this._lut = [], this.dpoints = v.derive(this.points, this._3d), this.computedirection();
+	  }
+	  computedirection() {
+	    const t = this.points,
+	      n = v.angle(t[0], t[this.order], t[1]);
+	    this.clockwise = n > 0;
+	  }
+	  length() {
+	    return v.length(this.derivative.bind(this));
+	  }
+	  static getABC(t = 2, n, e, r, i = .5) {
+	    const s = v.projectionratio(i, t),
+	      o = 1 - s,
+	      c = {
+	        x: s * n.x + o * r.x,
+	        y: s * n.y + o * r.y
+	      },
+	      u = v.abcratio(i, t);
+	    return {
+	      A: {
+	        x: e.x + (e.x - c.x) / u,
+	        y: e.y + (e.y - c.y) / u
+	      },
+	      B: e,
+	      C: c,
+	      S: n,
+	      E: r
+	    };
+	  }
+	  getABC(t, n) {
+	    n = n || this.get(t);
+	    let e = this.points[0],
+	      r = this.points[this.order];
+	    return I.getABC(this.order, e, n, r, t);
+	  }
+	  getLUT(t) {
+	    if (this.verify(), t = t || 100, this._lut.length === t + 1) return this._lut;
+	    this._lut = [], t++, this._lut = [];
+	    for (let n, e, r = 0; r < t; r++) e = r / (t - 1), n = this.compute(e), n.t = e, this._lut.push(n);
+	    return this._lut;
+	  }
+	  on(n, e) {
+	    e = e || 5;
+	    const r = this.getLUT(),
+	      i = [];
+	    for (let t, s = 0, o = 0; s < r.length; s++) t = r[s], v.dist(t, n) < e && (i.push(t), o += s / r.length);
+	    return !!i.length && (t /= i.length);
+	  }
+	  project(t) {
+	    const n = this.getLUT(),
+	      e = n.length - 1,
+	      r = v.closest(n, t),
+	      i = r.mpos,
+	      s = (i - 1) / e,
+	      o = (i + 1) / e,
+	      c = .1 / e;
+	    let u,
+	      a = r.mdist,
+	      h = s,
+	      l = h;
+	    a += 1;
+	    for (let n; h < o + c; h += c) u = this.compute(h), n = v.dist(t, u), n < a && (a = n, l = h);
+	    return l = l < 0 ? 0 : l > 1 ? 1 : l, u = this.compute(l), u.t = l, u.d = a, u;
+	  }
+	  get(t) {
+	    return this.compute(t);
+	  }
+	  point(t) {
+	    return this.points[t];
+	  }
+	  compute(t) {
+	    return this.ratios ? v.computeWithRatios(t, this.points, this.ratios, this._3d) : v.compute(t, this.points, this._3d, this.ratios);
+	  }
+	  raise() {
+	    const t = this.points,
+	      n = [t[0]],
+	      e = t.length;
+	    for (let r, i, s = 1; s < e; s++) r = t[s], i = t[s - 1], n[s] = {
+	      x: (e - s) / e * r.x + s / e * i.x,
+	      y: (e - s) / e * r.y + s / e * i.y
+	    };
+	    return n[e] = t[e - 1], new I(n);
+	  }
+	  derivative(t) {
+	    return v.compute(t, this.dpoints[0], this._3d);
+	  }
+	  dderivative(t) {
+	    return v.compute(t, this.dpoints[1], this._3d);
+	  }
+	  align() {
+	    let t = this.points;
+	    return new I(v.align(t, {
+	      p1: t[0],
+	      p2: t[t.length - 1]
+	    }));
+	  }
+	  curvature(t) {
+	    return v.curvature(t, this.dpoints[0], this.dpoints[1], this._3d);
+	  }
+	  inflections() {
+	    return v.inflections(this.points);
+	  }
+	  normal(t) {
+	    return this._3d ? this.__normal3(t) : this.__normal2(t);
+	  }
+	  __normal2(t) {
+	    const n = this.derivative(t),
+	      e = k(n.x * n.x + n.y * n.y);
+	    return {
+	      t: t,
+	      x: -n.y / e,
+	      y: n.x / e
+	    };
+	  }
+	  __normal3(t) {
+	    const n = this.derivative(t),
+	      e = this.derivative(t + .01),
+	      r = k(n.x * n.x + n.y * n.y + n.z * n.z),
+	      i = k(e.x * e.x + e.y * e.y + e.z * e.z);
+	    n.x /= r, n.y /= r, n.z /= r, e.x /= i, e.y /= i, e.z /= i;
+	    const s = {
+	        x: e.y * n.z - e.z * n.y,
+	        y: e.z * n.x - e.x * n.z,
+	        z: e.x * n.y - e.y * n.x
+	      },
+	      o = k(s.x * s.x + s.y * s.y + s.z * s.z);
+	    s.x /= o, s.y /= o, s.z /= o;
+	    const c = [s.x * s.x, s.x * s.y - s.z, s.x * s.z + s.y, s.x * s.y + s.z, s.y * s.y, s.y * s.z - s.x, s.x * s.z - s.y, s.y * s.z + s.x, s.z * s.z];
+	    return {
+	      t: t,
+	      x: c[0] * n.x + c[1] * n.y + c[2] * n.z,
+	      y: c[3] * n.x + c[4] * n.y + c[5] * n.z,
+	      z: c[6] * n.x + c[7] * n.y + c[8] * n.z
+	    };
+	  }
+	  hull(t) {
+	    let n = this.points,
+	      e = [],
+	      r = [],
+	      i = 0;
+	    for (r[i++] = n[0], r[i++] = n[1], r[i++] = n[2], 3 === this.order && (r[i++] = n[3]); n.length > 1;) {
+	      e = [];
+	      for (let s, o = 0, c = n.length - 1; o < c; o++) s = v.lerp(t, n[o], n[o + 1]), r[i++] = s, e.push(s);
+	      n = e;
+	    }
+	    return r;
+	  }
+	  split(t, n) {
+	    if (0 === t && n) return this.split(n).left;
+	    if (1 === n) return this.split(t).right;
+	    const e = this.hull(t),
+	      r = {
+	        left: 2 === this.order ? new I([e[0], e[3], e[5]]) : new I([e[0], e[4], e[7], e[9]]),
+	        right: 2 === this.order ? new I([e[5], e[4], e[2]]) : new I([e[9], e[8], e[6], e[3]]),
+	        span: e
+	      };
+	    return r.left._t1 = v.map(0, 0, 1, this._t1, this._t2), r.left._t2 = v.map(t, 0, 1, this._t1, this._t2), r.right._t1 = v.map(t, 0, 1, this._t1, this._t2), r.right._t2 = v.map(1, 0, 1, this._t1, this._t2), n ? (n = v.map(n, t, 1, 0, 1), r.right.split(n).left) : r;
+	  }
+	  extrema() {
+	    const t = {};
+	    let n = [];
+	    return this.dims.forEach(function (e) {
+	      let r = function (t) {
+	          return t[e];
+	        },
+	        i = this.dpoints[0].map(r);
+	      t[e] = v.droots(i), 3 === this.order && (i = this.dpoints[1].map(r), t[e] = t[e].concat(v.droots(i))), t[e] = t[e].filter(function (t) {
+	        return t >= 0 && t <= 1;
+	      }), n = n.concat(t[e].sort(v.numberSort));
+	    }.bind(this)), t.values = n.sort(v.numberSort).filter(function (t, e) {
+	      return n.indexOf(t) === e;
+	    }), t;
+	  }
+	  bbox() {
+	    const t = this.extrema(),
+	      n = {};
+	    return this.dims.forEach(function (e) {
+	      n[e] = v.getminmax(this, e, t[e]);
+	    }.bind(this)), n;
+	  }
+	  overlaps(t) {
+	    const n = this.bbox(),
+	      e = t.bbox();
+	    return v.bboxoverlap(n, e);
+	  }
+	  offset(t, n) {
+	    if (void 0 !== n) {
+	      const e = this.get(t),
+	        r = this.normal(t),
+	        i = {
+	          c: e,
+	          n: r,
+	          x: e.x + r.x * n,
+	          y: e.y + r.y * n
+	        };
+	      return this._3d && (i.z = e.z + r.z * n), i;
+	    }
+	    if (this._linear) {
+	      const n = this.normal(0),
+	        e = this.points.map(function (e) {
+	          const r = {
+	            x: e.x + t * n.x,
+	            y: e.y + t * n.y
+	          };
+	          return e.z && n.z && (r.z = e.z + t * n.z), r;
+	        });
+	      return [new I(e)];
+	    }
+	    return this.reduce().map(function (n) {
+	      return n._linear ? n.offset(t)[0] : n.scale(t);
+	    });
+	  }
+	  simple() {
+	    if (3 === this.order) {
+	      const t = v.angle(this.points[0], this.points[3], this.points[1]),
+	        n = v.angle(this.points[0], this.points[3], this.points[2]);
+	      if (t > 0 && n < 0 || t < 0 && n > 0) return !1;
+	    }
+	    const t = this.normal(0),
+	      n = this.normal(1);
+	    let e = t.x * n.x + t.y * n.y;
+	    return this._3d && (e += t.z * n.z), w(C(e)) < S / 3;
+	  }
+	  reduce() {
+	    let t,
+	      n,
+	      e = 0,
+	      r = 0,
+	      i = .01,
+	      s = [],
+	      o = [],
+	      c = this.extrema().values;
+	    for (-1 === c.indexOf(0) && (c = [0].concat(c)), -1 === c.indexOf(1) && c.push(1), e = c[0], t = 1; t < c.length; t++) r = c[t], n = this.split(e, r), n._t1 = e, n._t2 = r, s.push(n), e = r;
+	    return s.forEach(function (t) {
+	      for (e = 0, r = 0; r <= 1;) for (r = e + i; r <= 1.01; r += i) if (n = t.split(e, r), !n.simple()) {
+	        if (r -= i, w(e - r) < i) return [];
+	        n = t.split(e, r), n._t1 = v.map(e, 0, 1, t._t1, t._t2), n._t2 = v.map(r, 0, 1, t._t1, t._t2), o.push(n), e = r;
+	        break;
+	      }
+	      e < 1 && (n = t.split(e, 1), n._t1 = v.map(e, 0, 1, t._t1, t._t2), n._t2 = t._t2, o.push(n));
+	    }), o;
+	  }
+	  translate(t, n, e) {
+	    e = "number" == typeof e ? e : n;
+	    const r = this.order;
+	    let i = this.points.map((t, i) => (1 - i / r) * n + i / r * e);
+	    return new I(this.points.map((n, e) => ({
+	      x: n.x + t.x * i[e],
+	      y: n.y + t.y * i[e]
+	    })));
+	  }
+	  scale(t) {
+	    const n = this.order;
+	    let e = !1;
+	    if ("function" == typeof t && (e = t), e && 2 === n) return this.raise().scale(e);
+	    const r = this.clockwise,
+	      i = this.points;
+	    if (this._linear) return this.translate(this.normal(0), e ? e(0) : t, e ? e(1) : t);
+	    const s = e ? e(0) : t,
+	      o = e ? e(1) : t,
+	      c = [this.offset(0, 10), this.offset(1, 10)],
+	      u = [],
+	      a = v.lli4(c[0], c[0].c, c[1], c[1].c);
+	    if (!a) throw new Error("cannot scale this curve. Try reducing it first.");
+	    return [0, 1].forEach(function (t) {
+	      const e = u[t * n] = v.copy(i[t * n]);
+	      e.x += (t ? o : s) * c[t].n.x, e.y += (t ? o : s) * c[t].n.y;
+	    }), e ? ([0, 1].forEach(function (s) {
+	      if (2 !== n || !s) {
+	        var o = i[s + 1],
+	          c = {
+	            x: o.x - a.x,
+	            y: o.y - a.y
+	          },
+	          h = e ? e((s + 1) / n) : t;
+	        e && !r && (h = -h);
+	        var l = k(c.x * c.x + c.y * c.y);
+	        c.x /= l, c.y /= l, u[s + 1] = {
+	          x: o.x + h * c.x,
+	          y: o.y + h * c.y
+	        };
+	      }
+	    }), new I(u)) : ([0, 1].forEach(t => {
+	      if (2 === n && t) return;
+	      const e = u[t * n],
+	        r = this.derivative(t),
+	        s = {
+	          x: e.x + r.x,
+	          y: e.y + r.y
+	        };
+	      u[t + 1] = v.lli4(e, s, a, i[t + 1]);
+	    }), new I(u));
+	  }
+	  outline(t, n, e, r) {
+	    if (n = void 0 === n ? t : n, this._linear) {
+	      const i = this.normal(0),
+	        s = this.points[0],
+	        o = this.points[this.points.length - 1];
+	      let c, u, a;
+	      void 0 === e && (e = t, r = n), c = {
+	        x: s.x + i.x * t,
+	        y: s.y + i.y * t
+	      }, a = {
+	        x: o.x + i.x * e,
+	        y: o.y + i.y * e
+	      }, u = {
+	        x: (c.x + a.x) / 2,
+	        y: (c.y + a.y) / 2
+	      };
+	      const h = [c, u, a];
+	      c = {
+	        x: s.x - i.x * n,
+	        y: s.y - i.y * n
+	      }, a = {
+	        x: o.x - i.x * r,
+	        y: o.y - i.y * r
+	      }, u = {
+	        x: (c.x + a.x) / 2,
+	        y: (c.y + a.y) / 2
+	      };
+	      const l = [a, u, c],
+	        x = v.makeline(l[2], h[0]),
+	        y = v.makeline(h[2], l[0]),
+	        f = [x, new I(h), y, new I(l)];
+	      return new _(f);
+	    }
+	    const i = this.reduce(),
+	      s = i.length,
+	      o = [];
+	    let c,
+	      u = [],
+	      a = 0,
+	      h = this.length();
+	    const l = void 0 !== e && void 0 !== r;
+	    function x(t, n, e, r, i) {
+	      return function (s) {
+	        const o = r / e,
+	          c = (r + i) / e,
+	          u = n - t;
+	        return v.map(s, 0, 1, t + o * u, t + c * u);
+	      };
+	    }
+	    i.forEach(function (i) {
+	      const s = i.length();
+	      l ? (o.push(i.scale(x(t, e, h, a, s))), u.push(i.scale(x(-n, -r, h, a, s)))) : (o.push(i.scale(t)), u.push(i.scale(-n))), a += s;
+	    }), u = u.map(function (t) {
+	      return c = t.points, c[3] ? t.points = [c[3], c[2], c[1], c[0]] : t.points = [c[2], c[1], c[0]], t;
+	    }).reverse();
+	    const y = o[0].points[0],
+	      f = o[s - 1].points[o[s - 1].points.length - 1],
+	      p = u[s - 1].points[u[s - 1].points.length - 1],
+	      m = u[0].points[0],
+	      d = v.makeline(p, y),
+	      g = v.makeline(f, m),
+	      z = [d].concat(o).concat([g]).concat(u);
+	    return new _(z);
+	  }
+	  outlineshapes(t, n, e) {
+	    n = n || t;
+	    const r = this.outline(t, n).curves,
+	      i = [];
+	    for (let t = 1, n = r.length; t < n / 2; t++) {
+	      const s = v.makeshape(r[t], r[n - t], e);
+	      s.startcap.virtual = t > 1, s.endcap.virtual = t < n / 2 - 1, i.push(s);
+	    }
+	    return i;
+	  }
+	  intersects(t, n) {
+	    return t ? t.p1 && t.p2 ? this.lineIntersects(t) : (t instanceof I && (t = t.reduce()), this.curveintersects(this.reduce(), t, n)) : this.selfintersects(n);
+	  }
+	  lineIntersects(t) {
+	    const n = E(t.p1.x, t.p2.x),
+	      e = E(t.p1.y, t.p2.y),
+	      r = M(t.p1.x, t.p2.x),
+	      i = M(t.p1.y, t.p2.y);
+	    return v.roots(this.points, t).filter(t => {
+	      var s = this.get(t);
+	      return v.between(s.x, n, r) && v.between(s.y, e, i);
+	    });
+	  }
+	  selfintersects(t) {
+	    const n = this.reduce(),
+	      e = n.length - 2,
+	      r = [];
+	    for (let i, s, o, c = 0; c < e; c++) s = n.slice(c, c + 1), o = n.slice(c + 2), i = this.curveintersects(s, o, t), r.push(...i);
+	    return r;
+	  }
+	  curveintersects(t, n, e) {
+	    const r = [];
+	    t.forEach(function (t) {
+	      n.forEach(function (n) {
+	        t.overlaps(n) && r.push({
+	          left: t,
+	          right: n
+	        });
+	      });
+	    });
+	    let i = [];
+	    return r.forEach(function (t) {
+	      const n = v.pairiteration(t.left, t.right, e);
+	      n.length > 0 && (i = i.concat(n));
+	    }), i;
+	  }
+	  arcs(t) {
+	    return t = t || .5, this._iterate(t, []);
+	  }
+	  _error(t, n, e, r) {
+	    const i = (r - e) / 4,
+	      s = this.get(e + i),
+	      o = this.get(r - i),
+	      c = v.dist(t, n),
+	      u = v.dist(t, s),
+	      a = v.dist(t, o);
+	    return w(u - c) + w(a - c);
+	  }
+	  _iterate(t, n) {
+	    let e,
+	      r = 0,
+	      i = 1;
+	    do {
+	      e = 0, i = 1;
+	      let s,
+	        o,
+	        c,
+	        u,
+	        a,
+	        h = this.get(r),
+	        l = !1,
+	        x = !1,
+	        y = i,
+	        f = 1;
+	      do {
+	        if (x = l, u = c, y = (r + i) / 2, s = this.get(y), o = this.get(i), c = v.getccenter(h, s, o), c.interval = {
+	          start: r,
+	          end: i
+	        }, l = this._error(c, h, r, i) <= t, a = x && !l, a || (f = i), l) {
+	          if (i >= 1) {
+	            if (c.interval.end = f = 1, u = c, i > 1) {
+	              let t = {
+	                x: c.x + c.r * T(c.e),
+	                y: c.y + c.r * O(c.e)
+	              };
+	              c.e += v.angle({
+	                x: c.x,
+	                y: c.y
+	              }, t, this.get(1));
+	            }
+	            break;
+	          }
+	          i += (i - r) / 2;
+	        } else i = y;
+	      } while (!a && e++ < 100);
+	      if (e >= 100) break;
+	      u = u || c, n.push(u), r = f;
+	    } while (i < 1);
+	    return n;
+	  }
+	}
+	const B = {
+	  name: "perspective",
+	  execute: t => {
+	    const n = [],
+	      e = (t, n, e, r) => {
+	        if (t === n) return e / r;
+	        const i = 1 - (1 / (1 + e / r * (t / n - 1)) * t - n) / (t - n);
+	        return Math.min(1, Math.max(0, i));
+	      };
+	    return t.regionBoundaryCurves.forEach((r, i) => {
+	      const s = [];
+	      r.forEach((n, r) => {
+	        const c = [],
+	          u = n,
+	          a = {
+	            tl: u.top.points[0],
+	            tr: u.top.points[3],
+	            bl: u.bottom.points[0],
+	            br: u.bottom.points[3]
+	          };
+	        if ((t => {
+	          const n = o.calcIntersection(t.tl, t.tr, t.bl, t.br),
+	            e = o.calcIntersection(t.tl, t.bl, t.tr, t.br),
+	            r = n => n && Object.values(t).some((t, e, r) => o.isTriangleContainsPoint(n, r[e], r[(e + 1) % 4], r[(e + 2) % 4]));
+	          return r(n) || r(e);
+	        })(a)) throw new Error("[Warpvas: Perspective] Invalid perspective shape: The four control points cannot form a triangle or cross each other");
+	        const h = {
+	            left: new I(u.left.points).length(),
+	            right: new I(u.right.points).length(),
+	            top: new I(u.top.points).length(),
+	            bottom: new I(u.bottom.points).length()
+	          },
+	          l = o.calcIntersection(a.tl, a.bl, a.tr, a.br),
+	          x = o.calcIntersection(a.tl, a.tr, a.bl, a.br),
+	          {
+	            vertical: y,
+	            horizontal: f
+	          } = t.regionCurves[i][r],
+	          p = f.length - 1,
+	          m = y.length - 1;
+	        for (let t = 0; t < f.length; t++) for (let n = 0; n < y.length; n++) {
+	          let r = u.top.get(n / m),
+	            i = u.bottom.get(n / m);
+	          if (x) {
+	            const t = o.calcCoordDistance(a.tl, x) / o.calcCoordDistance(a.tr, x),
+	              s = e(h.left, h.left / t, n, m);
+	            r = u.top.get(s);
+	            const c = o.calcCoordDistance(a.bl, x) / o.calcCoordDistance(a.br, x),
+	              l = e(h.left, h.left / c, n, m);
+	            i = u.bottom.get(l);
+	          }
+	          let s = u.left.get(t / p),
+	            y = u.right.get(t / p);
+	          if (l) {
+	            const n = o.calcCoordDistance(a.tl, l) / o.calcCoordDistance(a.bl, l),
+	              r = e(h.top, h.top / n, t, p);
+	            s = u.left.get(r);
+	            const i = o.calcCoordDistance(a.tr, l) / o.calcCoordDistance(a.br, l),
+	              c = e(h.top, h.top / i, t, p);
+	            y = u.right.get(c);
+	          }
+	          const f = o.calcIntersection(r, i, s, y);
+	          f ? c.push(f) : c.push(r);
+	        }
+	        s.push(c);
+	      }), n.push(s);
+	    }), n;
+	  }
+	};
 
 	const CANVAS_PADDING = 8;
 	const LOGO_WIDTH = 460;
@@ -7740,6 +9040,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	                }
 	                case 7: {
 	                    warpvas.setSplitUnit(0.02).setRenderingConfig({
+	                        enableGridDisplay: true,
+	                        gridColor: { r: 206, g: 102, b: 91, a: 1 },
+	                    });
+	                    break;
+	                }
+	                case 8: {
+	                    warpvas.updateVertexCoord(0, 0, 'tl', { x: 0, y: 100 * ratio }, true);
+	                    warpvas.setSplitStrategy(B);
+	                    warpvas.setRenderingConfig({
 	                        enableGridDisplay: true,
 	                        gridColor: { r: 206, g: 102, b: 91, a: 1 },
 	                    });

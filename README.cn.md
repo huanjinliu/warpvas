@@ -137,23 +137,27 @@ warpvas
 
 ### 8. 设置网格细分点的计算策略
 
-```typescript
-const warpvas = new Warpvas(canvas);
+如果你需要应用透视模式，需要另外安装 warpvas-perspective 包。
 
-// 使用自定义策略
+```typescript
+import WarpvasPerspective from 'warpvas-perspective';
+
+const warpvas = new Warpvas(canvas);
 warpvas.setSplitStrategy({
     name: 'custom',
     execute: (warpvas) => {
-        // 返回自定义网格点计算结果
-        // return [[[{ x: 0, y: 0 }]]];
-
         // 使用默认策略计算的结果
-        return Warpvas.strategy(warpvas);
+        // return Warpvas.strategy(warpvas);
+
+        // 使用透视策略计算的结果
+        return WarpvasPerspective.strategy(warpvas);
     }
 });
 ```
 
 ### 9. 设置输入画布的尺寸限制
+
+当处理大尺寸图像时，可以通过此方法限制输入画布的最大尺寸，系统会自动将图像等比缩放到限制范围内进行处理，以提高性能和减少内存占用。
 
 ```typescript
 const warpvas = new Warpvas(canvas);
@@ -165,6 +169,8 @@ warpvas.setInputLimitSize({
 ```
 
 ### 10. 设置输出画布的尺寸限制
+
+限制变形后输出画布的最大尺寸。当变形导致画布尺寸过大时，系统会自动将结果等比缩放到限制范围内，避免因内存限制导致渲染失败。
 
 ```typescript
 const warpvas = new Warpvas(canvas);

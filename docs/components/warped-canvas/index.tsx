@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 import { loadFont } from 'docs/utils';
 import { Warpvas } from 'warpvas';
+import WarpvasPerspective from 'warpvas-perspective';
 
 const CANVAS_PADDING = 8;
 const LOGO_WIDTH = 460;
@@ -163,6 +164,15 @@ const WarpedCanvas: React.FC<{ className?: string; step: number }> = ({ classNam
         }
         case 7: {
           warpvas.setSplitUnit(0.02).setRenderingConfig({
+            enableGridDisplay: true,
+            gridColor: { r: 206, g: 102, b: 91, a: 1 },
+          });
+          break;
+        }
+        case 8: {
+          warpvas.updateVertexCoord(0, 0, 'tl', { x: 0, y: 100 * ratio }, true);
+          warpvas.setSplitStrategy(WarpvasPerspective);
+          warpvas.setRenderingConfig({
             enableGridDisplay: true,
             gridColor: { r: 206, g: 102, b: 91, a: 1 },
           });

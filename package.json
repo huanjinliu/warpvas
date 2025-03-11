@@ -112,7 +112,8 @@
     "typedoc": "^0.27.7",
     "typedoc-plugin-markdown": "^4.4.2",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^7.11.0"
+    "typescript-eslint": "^7.11.0",
+    "warpvas-perspective": "^1.0.1"
   },
   "dependencies": {
     "assist-worker": "^1.2.0",

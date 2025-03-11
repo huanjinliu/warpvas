@@ -136,23 +136,27 @@ warpvas
 
 ### 8. Set Grid Split Point Calculation Strategy
 
-```typescript
-const warpvas = new Warpvas(canvas);
+To apply perspective mode, you need to install the warpvas-perspective package separately.
 
-// Use custom strategy
+```typescript
+import WarpvasPerspective from 'warpvas-perspective';
+
+const warpvas = new Warpvas(canvas);
 warpvas.setSplitStrategy({
     name: 'custom',
     execute: (warpvas) => {
-        // Return custom grid point calculation result
-        // return [[[{ x: 0, y: 0 }]]];
-
         // Use default strategy calculation result
-        return Warpvas.strategy(warpvas);
+        // return Warpvas.strategy(warpvas);
+
+        // Use perspective strategy calculation result
+        return WarpvasPerspective.strategy(warpvas);
     }
 });
 ```
 
 ### 9. Set Input Canvas Size Limit
+
+When processing large images, you can use this method to limit the maximum size of the input canvas. The system will automatically scale the image proportionally within the limits to improve performance and reduce memory usage.
 
 ```typescript
 const warpvas = new Warpvas(canvas);
@@ -164,6 +168,8 @@ warpvas.setInputLimitSize({
 ```
 
 ### 10. Set Output Canvas Size Limit
+
+Limit the maximum size of the distorted output canvas. When distortion results in an oversized canvas, the system will automatically scale the result proportionally within limits to prevent rendering failures due to memory constraints.
 
 ```typescript
 const warpvas = new Warpvas(canvas);
