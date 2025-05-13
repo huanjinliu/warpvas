@@ -1191,10 +1191,9 @@ export class Warpvas {
 
     if (!limitSize) {
       this._inputLimitScale = 1;
-      this._cacheInputCanvas = null;
     }
 
-    // Clear cached source image data
+    this._cacheInputCanvas = null;
     this._cacheSourceImageData = null;
 
     return this;
