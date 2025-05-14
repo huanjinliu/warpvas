@@ -1,6 +1,6 @@
 {
   "name": "warpvas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This JavaScript library enables fast and efficient image distortion transformations using Canvas 2D.",
   "keywords": [
     "transform",
