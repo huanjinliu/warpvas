@@ -28,7 +28,7 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "pnpm link . && npm run dev",
+    "start": "npm link . && npm run dev",
     "dev": "rollup --config --watch --environment NODE_ENV:development,ROLLUP_WATCH:true",
     "build": "rollup --config --environment NODE_ENV:production && npm run docs:api",
     "build:dev": "rollup --config --environment NODE_ENV:development && npm run docs:api",
@@ -117,15 +117,9 @@
   },
   "dependencies": {
     "assist-worker": "^1.2.0",
-    "bezier-js": "^6.1.4",
-    "warpvas": "link:"
+    "bezier-js": "^6.1.4"
   },
   "engines": {
     "node": ">=14.0.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "warpvas": "link:"
-    }
   }
 }
