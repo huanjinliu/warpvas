@@ -755,16 +755,15 @@ export class Warpvas {
     const maxColumns = Math.max(Math.floor(columns), 1);
 
     const ratioPoints: Coord[] = [];
-    for (let row = 1; row < maxRows; row++) {
-      for (let col = 1; col < maxColumns; col++) {
-        if (row === col) {
-          ratioPoints.push({
-            x: col / columns,
-            y: row / rows,
-          });
-        }
+    for (let row = 0; row < maxRows; row++) {
+      for (let col = 0; col < maxColumns; col++) {
+        ratioPoints.push({
+          x: col / maxColumns,
+          y: row / maxRows,
+        });
       }
     }
+
     return ratioPoints;
   }
 
@@ -813,6 +812,8 @@ export class Warpvas {
         });
       }
     }
+
+    console.log(regions);
 
     return regions;
   }
