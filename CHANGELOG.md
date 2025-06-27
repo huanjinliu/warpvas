@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/huanjinliu/warpvas/compare/v1.0.3...v1.0.4) (2025-06-27)
+
+
+### Bug Fixes
+
+* ensure adjacent boundaries update during edge modifications ([e061f0b](https://github.com/huanjinliu/warpvas/commit/e061f0b578bfbdd8a9aae0597abed29efee33566))
+
 ### [1.0.3](https://github.com/huanjinliu/warpvas/compare/v1.0.2...v1.0.3) (2025-06-27)
 
 
