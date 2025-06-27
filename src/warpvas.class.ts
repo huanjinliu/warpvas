@@ -1768,6 +1768,24 @@ export class Warpvas {
     this.regionBoundaryCurves = this._initializeRegionBoundaryCurves(
       this.forEachRegionBoundCoords((row, col, dir, bezier) => {
         if (row === rowIndex && col === colIndex && direction === dir) return coords;
+        switch (direction) {
+          case Direction.TOP: {
+            if (row === rowIndex - 1 && col === colIndex && dir === Direction.BOTTOM) return coords;
+            break;
+          }
+          case Direction.BOTTOM: {
+            if (row === rowIndex + 1 && col === colIndex && dir === Direction.TOP) return coords;
+            break;
+          }
+          case Direction.LEFT: {
+            if (row === rowIndex && col === colIndex - 1 && dir === Direction.RIGHT) return coords;
+            break;
+          }
+          case Direction.RIGHT: {
+            if (row === rowIndex && col === colIndex + 1 && dir === Direction.LEFT) return coords;
+            break;
+          }
+        }
         return bezier.points.map((coord) => ({
           x: coord.x,
           y: coord.y,
