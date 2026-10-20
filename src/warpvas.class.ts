@@ -219,7 +219,7 @@ export class Warpvas {
    * Stores the canvas containing the original image data. If an HTMLImageElement instance is passed to the constructor,
    * a new canvas will be automatically created and the image will be drawn onto it to avoid modifying the original image.
    */
-  public source: HTMLCanvasElement;
+  public source: HTMLCanvasElement | OffscreenCanvas;
 
   /**
    * List of relative positions of split points
@@ -479,8 +479,12 @@ export class Warpvas {
    * const canvas = document.createElement('canvas');
    * new Warpvas(canvas, 2, 2);
    */
-  constructor(source: HTMLCanvasElement | HTMLImageElement, rows = 1, columns = 1) {
-    if (!(source instanceof HTMLCanvasElement) && !(source instanceof HTMLImageElement)) {
+  constructor(source: HTMLCanvasElement | OffscreenCanvas | HTMLImageElement, rows = 1, columns = 1) {
+    if (
+      !(source instanceof HTMLCanvasElement) &&
+      !(source instanceof OffscreenCanvas) &&
+      !(source instanceof HTMLImageElement)
+    ) {
       throw new TypeError('[Warpvas] source must be either HTMLCanvasElement or HTMLImageElement!');
     }
 
@@ -2655,7 +2659,7 @@ export class Warpvas {
    * @see setRenderingCanvas Configure reusable canvas
    * @see renderWithWorker Async rendering via Web Worker
    */
-  render(): HTMLCanvasElement {
+  render(): HTMLCanvasElement | OffscreenCanvas {
     const { inputCanvas, outputCanvas, options } = this._generateRenderOptions();
 
     // Use Canvas 2D rendering when safe mode is active

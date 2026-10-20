@@ -25,7 +25,7 @@ import type { Warpvas } from '../warpvas.class';
  */
 export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
   warpvas: Warpvas,
-  source: HTMLCanvasElement,
+  source: HTMLCanvasElement | OffscreenCanvas,
   destination: Canvas,
   options: {
     x: number;
@@ -221,8 +221,8 @@ export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenC
  */
 const createWarpedCanvas2D = (
   warpvas: Warpvas,
-  source: HTMLCanvasElement,
-  destination: HTMLCanvasElement | null,
+  source: HTMLCanvasElement | OffscreenCanvas,
+  destination: HTMLCanvasElement | OffscreenCanvas | null,
   options: {
     x: number;
     y: number;

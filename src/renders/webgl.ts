@@ -12,7 +12,7 @@ import type { Warpvas } from '../warpvas.class';
  */
 export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
   warpvas: Warpvas,
-  source: HTMLCanvasElement | ImageData,
+  source: HTMLCanvasElement | OffscreenCanvas | ImageData,
   destination: Canvas,
   options: {
     x: number;
@@ -392,7 +392,7 @@ export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenC
  */
 const createWarpedCanvasWebGL = (
   warpvas: Warpvas,
-  source: HTMLCanvasElement,
+  source: HTMLCanvasElement | OffscreenCanvas,
   destination: HTMLCanvasElement | null,
   options: {
     x: number;
