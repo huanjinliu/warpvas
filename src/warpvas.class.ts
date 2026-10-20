@@ -212,14 +212,15 @@ export type WarpState = {
  * const warpvasCanvas = warpvas.render();
  * document.body.appendChild(warpvasCanvas);
  */
-export class Warpvas {
+export class Warpvas<Canvas extends HTMLCanvasElement | OffscreenCanvas = HTMLCanvasElement> {
   /**
    * Source canvas object
    *
-   * Stores the canvas containing the original image data. If an HTMLImageElement instance is passed to the constructor,
-   * a new canvas will be automatically created and the image will be drawn onto it to avoid modifying the original image.
+   * Stores the canvas containing the original image data. An HTMLCanvasElement or OffscreenCanvas
+   * is kept as-is. If an HTMLImageElement is passed to the constructor, a new canvas is created
+   * and the image is drawn onto it to avoid modifying the original image.
    */
-  public source: HTMLCanvasElement | OffscreenCanvas;
+  public source: Canvas;
 
   /**
    * List of relative positions of split points
@@ -400,7 +401,7 @@ export class Warpvas {
    * @private
    * @see setRenderingCanvas Learn how to configure the output canvas in singleton mode
    */
-  private _cacheOutputCanvas: HTMLCanvasElement | null = null;
+  private _cacheOutputCanvas: Canvas | null = null;
 
   /**
    * Input size constraints
@@ -453,9 +454,9 @@ export class Warpvas {
    * Creates a new warp deformation canvas instance. Accepts an image or canvas as source,
    * with optional initial grid division settings.
    *
-   * @param source - Image source (HTMLImageElement or HTMLCanvasElement)
-   *                - For images: auto-creates canvas and draws image
-   *                - For canvases: uses directly as source
+   * @param source - Image source (HTMLImageElement, HTMLCanvasElement, or OffscreenCanvas)
+   *                - For images: auto-creates an HTMLCanvasElement and draws the image
+   *                - For canvases: uses that canvas as the source. render() returns the same kind of canvas
    *
    * @param rows - Initial horizontal divisions
    *              - Must be integer ≥ 1
@@ -479,13 +480,17 @@ export class Warpvas {
    * const canvas = document.createElement('canvas');
    * new Warpvas(canvas, 2, 2);
    */
-  constructor(source: HTMLCanvasElement | OffscreenCanvas | HTMLImageElement, rows = 1, columns = 1) {
+  constructor(source: HTMLImageElement, rows?: number, columns?: number);
+  constructor(source: Canvas, rows?: number, columns?: number);
+  constructor(source: Canvas | HTMLImageElement, rows = 1, columns = 1) {
     if (
       !(source instanceof HTMLCanvasElement) &&
       !(source instanceof OffscreenCanvas) &&
       !(source instanceof HTMLImageElement)
     ) {
-      throw new TypeError('[Warpvas] source must be either HTMLCanvasElement or HTMLImageElement!');
+      throw new TypeError(
+        '[Warpvas] source must be an HTMLCanvasElement, OffscreenCanvas, or HTMLImageElement!',
+      );
     }
 
     // Initialize source canvas
@@ -498,9 +503,9 @@ export class Warpvas {
       canvas.width = source.naturalWidth;
       canvas.height = source.naturalHeight;
       ctx.drawImage(source, 0, 0);
-      this.source = canvas;
+      this.source = canvas as Canvas;
     } else {
-      this.source = source;
+      this.source = source as Canvas;
     }
 
     // Initialize split ratio points
@@ -1294,7 +1299,7 @@ export class Warpvas {
    * WARNING: Avoid using the same canvas for both input and output, as this forces
    * creating a temporary canvas copy before each render, significantly degrading performance
    */
-  setRenderingCanvas(canvas: HTMLCanvasElement) {
+  setRenderingCanvas(canvas: Canvas) {
     this._cacheOutputCanvas = canvas;
     return this;
   }
@@ -1421,7 +1426,18 @@ export class Warpvas {
    *
    * @returns New canvas element with copied content
    */
-  private _cloneCanvas(canvas: HTMLCanvasElement, width = canvas.width, height = canvas.height) {
+  private _blankCanvas(): Canvas {
+    if (this.source instanceof OffscreenCanvas) {
+      return new OffscreenCanvas(0, 0) as Canvas;
+    }
+    return document.createElement('canvas') as Canvas;
+  }
+
+  private _cloneCanvas(
+    canvas: HTMLCanvasElement | OffscreenCanvas,
+    width = canvas.width,
+    height = canvas.height,
+  ) {
     const cloneCanvas = document.createElement('canvas');
     cloneCanvas.width = width;
     cloneCanvas.height = height;
@@ -2509,7 +2525,7 @@ export class Warpvas {
    *
    * @returns Configuration object containing:
    *         - inputCanvas: Source canvas (original image or cached scaled version)
-   *         - outputCanvas: Target canvas instance (specified or null)
+   *         - outputCanvas: Target canvas instance (specified, or a new canvas of the same kind as the source)
    *         - options: Rendering parameters
    *           - x: Horizontal rendering offset
    *           - y: Vertical rendering offset
@@ -2532,7 +2548,8 @@ export class Warpvas {
     this.regionCurves = this._generateAllRegionCurves(this.regionBoundaryCurves);
 
     // Calculate all split points using division strategy
-    this.regionPoints = this.splitStrategy.execute(this);
+    // Strategies only read the mesh, so the source canvas kind does not matter here.
+    this.regionPoints = this.splitStrategy.execute(this as Warpvas);
 
     // Compute transformed image offset and dimensions
     const { offsetX, offsetY, width, height } = this.getBoundingBoxInfo();
@@ -2573,7 +2590,7 @@ export class Warpvas {
 
     // Retrieve input/output canvases
     let inputCanvas = this._cacheInputCanvas ?? this.source;
-    const outputCanvas = this._cacheOutputCanvas ?? null;
+    const outputCanvas = this._cacheOutputCanvas ?? this._blankCanvas();
 
     // Clone input canvas when sharing with output
     if (inputCanvas === outputCanvas) {
@@ -2616,10 +2633,10 @@ export class Warpvas {
 
     const ctx = inputCanvas.getContext('2d');
 
-    if (!ctx) {
+    if (!ctx || !('getImageData' in ctx)) {
       throw new Error(
         '[Warpvas] Failed to get 2D rendering context. Please ensure that:\n' +
-          '1. The inputCanvas is a valid <canvas> element\n' +
+          '1. The input canvas is an HTMLCanvasElement or OffscreenCanvas with a 2D context\n' +
           '2. The browser supports Canvas API\n' +
           '3. The canvas has not been tainted by cross-origin content',
       );
@@ -2638,7 +2655,7 @@ export class Warpvas {
    * Generates a new canvas or renders deformed image on specified canvas
    * based on current deformation parameters.
    *
-   * @returns {HTMLCanvasElement} Newly created or specified canvas element
+   * @returns Canvas of the same kind as the source. An OffscreenCanvas source returns an OffscreenCanvas.
    *
    * @throws {Error}
    * - [Warpvas Error] When rendering fails without safe mode
@@ -2659,7 +2676,7 @@ export class Warpvas {
    * @see setRenderingCanvas Configure reusable canvas
    * @see renderWithWorker Async rendering via Web Worker
    */
-  render(): HTMLCanvasElement | OffscreenCanvas {
+  render(): Canvas {
     const { inputCanvas, outputCanvas, options } = this._generateRenderOptions();
 
     // Use Canvas 2D rendering when safe mode is active
@@ -2668,8 +2685,8 @@ export class Warpvas {
     }
 
     const renderMethod = {
-      '2d': createWarpedCanvas2D,
-      webgl: createWarpedCanvasWebGL,
+      '2d': createWarpedCanvas2D<Canvas>,
+      webgl: createWarpedCanvasWebGL<Canvas>,
     }[this.renderingContext];
 
     try {
@@ -2692,7 +2709,7 @@ export class Warpvas {
    * Executes deformation and rendering operations in a separate thread
    * to prevent blocking the main thread.
    *
-   * @returns {Promise<HTMLCanvasElement>} Promise resolving to rendered warped canvas
+   * @returns Promise of a canvas of the same kind as the source
    *
    * @throws {Error}
    * - [Warpvas Error] Failed to create Web Worker
@@ -2711,7 +2728,7 @@ export class Warpvas {
    * @see setRenderingConfig Configure rendering options
    * @see render Synchronous rendering method
    */
-  async renderWithWorker(caching = true): Promise<HTMLCanvasElement> {
+  async renderWithWorker(caching = true): Promise<Canvas> {
     const { outputCanvas, options } = this._generateRenderOptions();
 
     const imageData = this._getInputCanvasImageData(caching);
@@ -2722,8 +2739,8 @@ export class Warpvas {
     }
 
     const renderMethod = {
-      '2d': createWorkerWarpedCanvas2D,
-      webgl: createWorkerWarpedCanvasWebGL,
+      '2d': createWorkerWarpedCanvas2D<Canvas>,
+      webgl: createWorkerWarpedCanvasWebGL<Canvas>,
     }[this.renderingContext];
 
     try {

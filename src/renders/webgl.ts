@@ -11,7 +11,7 @@ import type { Warpvas } from '../warpvas.class';
  * @returns Created warped canvas instance using WebGL in WebWorker
  */
 export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
-  warpvas: Warpvas,
+  warpvas: Warpvas<Canvas>,
   source: HTMLCanvasElement | OffscreenCanvas | ImageData,
   destination: Canvas,
   options: {
@@ -390,10 +390,10 @@ export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenC
  *
  * @returns {HTMLCanvasElement} Rendered canvas object
  */
-const createWarpedCanvasWebGL = (
-  warpvas: Warpvas,
+const createWarpedCanvasWebGL = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
+  warpvas: Warpvas<Canvas>,
   source: HTMLCanvasElement | OffscreenCanvas,
-  destination: HTMLCanvasElement | null,
+  destination: Canvas,
   options: {
     x: number;
     y: number;
@@ -405,7 +405,6 @@ const createWarpedCanvasWebGL = (
 ) => {
   const { width, height, sourceScale = 1, destinationScale = 1 } = options;
 
-  destination = destination ?? document.createElement('canvas');
   destination.width = width * destinationScale * sourceScale;
   destination.height = height * destinationScale * sourceScale;
 

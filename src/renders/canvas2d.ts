@@ -24,7 +24,7 @@ import type { Warpvas } from '../warpvas.class';
  * - Supports OffscreenCanvas for worker thread rendering
  */
 export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
-  warpvas: Warpvas,
+  warpvas: Warpvas<Canvas>,
   source: HTMLCanvasElement | OffscreenCanvas,
   destination: Canvas,
   options: {
@@ -219,10 +219,10 @@ export const createWarpedCanvas = <Canvas extends HTMLCanvasElement | OffscreenC
  *
  * @returns Created warped canvas instance using Canvas2D
  */
-const createWarpedCanvas2D = (
-  warpvas: Warpvas,
+const createWarpedCanvas2D = <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
+  warpvas: Warpvas<Canvas>,
   source: HTMLCanvasElement | OffscreenCanvas,
-  destination: HTMLCanvasElement | OffscreenCanvas | null,
+  destination: Canvas,
   options: {
     x: number;
     y: number;
@@ -234,7 +234,6 @@ const createWarpedCanvas2D = (
 ) => {
   const { width, height, sourceScale = 1, destinationScale = 1 } = options;
 
-  destination = destination ?? document.createElement('canvas');
   destination.width = width * destinationScale * sourceScale;
   destination.height = height * destinationScale * sourceScale;
 
