@@ -14,10 +14,10 @@ import { createWarpedCanvas } from './webgl';
  *
  * @returns {Promise<HTMLCanvasElement>} Rendered canvas object
  */
-const createWorkerWarpedCanvasWebGL = async (
-  warpvas: Warpvas,
+const createWorkerWarpedCanvasWebGL = async <Canvas extends HTMLCanvasElement | OffscreenCanvas>(
+  warpvas: Warpvas<Canvas>,
   imageData: ImageData,
-  destination: HTMLCanvasElement | null,
+  destination: Canvas,
   options: {
     x: number;
     y: number;
@@ -26,7 +26,7 @@ const createWorkerWarpedCanvasWebGL = async (
     sourceScale?: number;
     destinationScale?: number;
   },
-): Promise<HTMLCanvasElement> => {
+): Promise<Canvas> => {
   const { regionPoints, renderingConfig, regionCurves, originalRegionPoints } = warpvas;
   const warpvasLike = {
     renderingConfig,
@@ -60,12 +60,19 @@ const createWorkerWarpedCanvasWebGL = async (
   const imageBitmap = await worker.run(imageData);
   worker.terminate();
 
-  destination = destination ?? document.createElement('canvas');
   destination.width = imageBitmap.width;
   destination.height = imageBitmap.height;
-  destination!.getContext('2d')!.drawImage(imageBitmap, 0, 0);
+  drawBitmap(destination, imageBitmap);
 
   return destination;
+};
+
+const drawBitmap = (canvas: HTMLCanvasElement | OffscreenCanvas, bitmap: ImageBitmap) => {
+  const ctx = canvas.getContext('2d');
+  if (!ctx || !('drawImage' in ctx)) {
+    throw new Error('[Warpvas] Failed to get 2D rendering context for the output canvas');
+  }
+  ctx.drawImage(bitmap, 0, 0);
 };
 
 export default createWorkerWarpedCanvasWebGL;

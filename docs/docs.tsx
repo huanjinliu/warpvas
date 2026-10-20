@@ -20,6 +20,7 @@ const Docs = () => {
       './codes/10-set-output-limit-size.md',
       './codes/11-set-rendering-context.md',
       './codes/12-render-with-worker.md',
+      './codes/13-offscreen-canvas.md',
     ],
     [],
   );

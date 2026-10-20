@@ -1,5 +1,3 @@
-
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 (function (React2, require$$0, fabric) {
 	'use strict';
 
@@ -5409,7 +5407,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      return y$1.lli4(t, t.c, e, e.c);
 	    },
 	    makeline: function (t, e) {
-	      return new T$1(t.x, t.y, (t.x + e.x) / 2, (t.y + e.y) / 2, e.x, e.y);
+	      return new z$1(t.x, t.y, (t.x + e.x) / 2, (t.y + e.y) / 2, e.x, e.y);
 	    },
 	    findbbox: function (t) {
 	      let e = g$1,
@@ -5539,20 +5537,20 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        v = m / 3,
 	        _ = (2 * x * x * x - 9 * x * f + 27 * d) / 27,
 	        b = _ / 2,
-	        E = b * b + v * v * v;
-	      let w, C, z, T, R;
-	      if (E < 0) {
+	        w = b * b + v * v * v;
+	      let C, E, T, z, R;
+	      if (w < 0) {
 	        const t = -m / 3,
 	          e = a$1(t * t * t),
 	          i = -_ / (2 * e),
 	          r = o$1(i < -1 ? -1 : i > 1 ? 1 : i),
 	          h = 2 * c$1(e);
-	        return z = h * n$1(r / 3) - x / 3, T = h * n$1((r + u$1) / 3) - x / 3, R = h * n$1((r + 2 * u$1) / 3) - x / 3, [z, T, R].filter(s);
+	        return T = h * n$1(r / 3) - x / 3, z = h * n$1((r + u$1) / 3) - x / 3, R = h * n$1((r + 2 * u$1) / 3) - x / 3, [T, z, R].filter(s);
 	      }
-	      if (0 === E) return w = b < 0 ? c$1(-b) : -c$1(b), z = 2 * w - x / 3, T = -w - x / 3, [z, T].filter(s);
+	      if (0 === w) return C = b < 0 ? c$1(-b) : -c$1(b), T = 2 * C - x / 3, z = -C - x / 3, [T, z].filter(s);
 	      {
-	        const t = a$1(E);
-	        return w = c$1(-b + t), C = c$1(b + t), [w - C - x / 3].filter(s);
+	        const t = a$1(w);
+	        return C = c$1(-b + t), E = c$1(b + t), [C - E - x / 3].filter(s);
 	      }
 	    },
 	    droots: function (t) {
@@ -5683,16 +5681,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        v = (e.x + i.x) / 2,
 	        _ = (e.y + i.y) / 2,
 	        b = d + l,
-	        E = m + g,
-	        w = v + x,
-	        C = _ + f,
-	        z = y$1.lli8(d, m, b, E, v, _, w, C),
-	        T = y$1.dist(z, t);
+	        w = m + g,
+	        C = v + x,
+	        E = _ + f,
+	        T = y$1.lli8(d, m, b, w, v, _, C, E),
+	        z = y$1.dist(T, t);
 	      let R,
-	        S = s$1(t.y - z.y, t.x - z.x),
-	        P = s$1(e.y - z.y, e.x - z.x),
-	        M = s$1(i.y - z.y, i.x - z.x);
-	      return S < M ? ((S > P || P > M) && (S += u$1), S > M && (R = M, M = S, S = R)) : M < P && P < S ? (R = M, M = S, S = R) : M += u$1, z.s = S, z.e = M, z.r = T, z;
+	        S = s$1(t.y - T.y, t.x - T.x),
+	        P = s$1(e.y - T.y, e.x - T.x),
+	        O = s$1(i.y - T.y, i.x - T.x);
+	      return S < O ? ((S > P || P > O) && (S += u$1), S > O && (R = O, O = S, S = R)) : O < P && P < S ? (R = O, O = S, S = R) : O += u$1, T.s = S, T.e = O, T.r = z, T;
 	    },
 	    numberSort: function (t, e) {
 	      return t - e;
@@ -5740,12 +5738,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    min: v$1,
 	    max: _$1,
 	    cos: b$1,
-	    sin: E$1,
-	    acos: w$1,
-	    sqrt: C$1
+	    sin: w$1,
+	    acos: C$1,
+	    sqrt: E$1
 	  } = Math,
-	  z$1 = Math.PI;
-	let T$1 = class T {
+	  T$1 = Math.PI;
+	let z$1 = class z {
 	  constructor(t) {
 	    let e = t && t.forEach ? t : Array.from(arguments).slice(),
 	      i = !1;
@@ -5786,14 +5784,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    this._linear = l.reduce((t, e) => t + m$1(e.y), 0) < u / 50, this._lut = [], this._t1 = 0, this._t2 = 1, this.update();
 	  }
 	  static quadraticFromPoints(t, e, i, n) {
-	    if (void 0 === n && (n = .5), 0 === n) return new T(e, e, i);
-	    if (1 === n) return new T(t, e, e);
-	    const r = T.getABC(2, t, e, i, n);
-	    return new T(t, r.A, i);
+	    if (void 0 === n && (n = .5), 0 === n) return new z(e, e, i);
+	    if (1 === n) return new z(t, e, e);
+	    const r = z.getABC(2, t, e, i, n);
+	    return new z(t, r.A, i);
 	  }
 	  static cubicFromPoints(t, e, i, n, r) {
 	    void 0 === n && (n = .5);
-	    const o = T.getABC(3, t, e, i, n);
+	    const o = z.getABC(3, t, e, i, n);
 	    void 0 === r && (r = y$1.dist(e, o.C));
 	    const s = r * (1 - n) / n,
 	      a = y$1.dist(t, i),
@@ -5810,23 +5808,23 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      v = o.A,
 	      _ = v.x + (x - v.x) / (1 - n),
 	      b = v.y + (f - v.y) / (1 - n),
-	      E = v.x + (d - v.x) / n,
-	      w = v.y + (m - v.y) / n,
-	      C = {
+	      w = v.x + (d - v.x) / n,
+	      C = v.y + (m - v.y) / n,
+	      E = {
 	        x: t.x + (_ - t.x) / n,
 	        y: t.y + (b - t.y) / n
 	      },
-	      z = {
-	        x: i.x + (E - i.x) / (1 - n),
-	        y: i.y + (w - i.y) / (1 - n)
+	      T = {
+	        x: i.x + (w - i.x) / (1 - n),
+	        y: i.y + (C - i.y) / (1 - n)
 	      };
-	    return new T(t, C, z, i);
+	    return new z(t, E, T, i);
 	  }
 	  static getUtils() {
 	    return y$1;
 	  }
 	  getUtils() {
-	    return T.getUtils();
+	    return z.getUtils();
 	  }
 	  static get PolyBezier() {
 	    return d$1;
@@ -5891,7 +5889,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    e = e || this.get(t);
 	    let i = this.points[0],
 	      n = this.points[this.order];
-	    return T.getABC(this.order, i, e, n, t);
+	    return z.getABC(this.order, i, e, n, t);
 	  }
 	  getLUT(t) {
 	    if (this.verify(), t = t || 100, this._lut.length === t + 1) return this._lut;
@@ -5939,7 +5937,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      x: (i - o) / i * n.x + o / i * r.x,
 	      y: (i - o) / i * n.y + o / i * r.y
 	    };
-	    return e[i] = t[i - 1], new T(e);
+	    return e[i] = t[i - 1], new z(e);
 	  }
 	  derivative(t) {
 	    return y$1.compute(t, this.dpoints[0], this._3d);
@@ -5949,7 +5947,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  }
 	  align() {
 	    let t = this.points;
-	    return new T(y$1.align(t, {
+	    return new z(y$1.align(t, {
 	      p1: t[0],
 	      p2: t[t.length - 1]
 	    }));
@@ -5965,7 +5963,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  }
 	  __normal2(t) {
 	    const e = this.derivative(t),
-	      i = C$1(e.x * e.x + e.y * e.y);
+	      i = E$1(e.x * e.x + e.y * e.y);
 	    return {
 	      t: t,
 	      x: -e.y / i,
@@ -5975,15 +5973,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  __normal3(t) {
 	    const e = this.derivative(t),
 	      i = this.derivative(t + .01),
-	      n = C$1(e.x * e.x + e.y * e.y + e.z * e.z),
-	      r = C$1(i.x * i.x + i.y * i.y + i.z * i.z);
+	      n = E$1(e.x * e.x + e.y * e.y + e.z * e.z),
+	      r = E$1(i.x * i.x + i.y * i.y + i.z * i.z);
 	    e.x /= n, e.y /= n, e.z /= n, i.x /= r, i.y /= r, i.z /= r;
 	    const o = {
 	        x: i.y * e.z - i.z * e.y,
 	        y: i.z * e.x - i.x * e.z,
 	        z: i.x * e.y - i.y * e.x
 	      },
-	      s = C$1(o.x * o.x + o.y * o.y + o.z * o.z);
+	      s = E$1(o.x * o.x + o.y * o.y + o.z * o.z);
 	    o.x /= s, o.y /= s, o.z /= s;
 	    const a = [o.x * o.x, o.x * o.y - o.z, o.x * o.z + o.y, o.x * o.y + o.z, o.y * o.y, o.y * o.z - o.x, o.x * o.z - o.y, o.y * o.z + o.x, o.z * o.z];
 	    return {
@@ -6010,8 +6008,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    if (1 === e) return this.split(t).right;
 	    const i = this.hull(t),
 	      n = {
-	        left: 2 === this.order ? new T([i[0], i[3], i[5]]) : new T([i[0], i[4], i[7], i[9]]),
-	        right: 2 === this.order ? new T([i[5], i[4], i[2]]) : new T([i[9], i[8], i[6], i[3]]),
+	        left: 2 === this.order ? new z([i[0], i[3], i[5]]) : new z([i[0], i[4], i[7], i[9]]),
+	        right: 2 === this.order ? new z([i[5], i[4], i[2]]) : new z([i[9], i[8], i[6], i[3]]),
 	        span: i
 	      };
 	    return n.left._t1 = y$1.map(0, 0, 1, this._t1, this._t2), n.left._t2 = y$1.map(t, 0, 1, this._t1, this._t2), n.right._t1 = y$1.map(t, 0, 1, this._t1, this._t2), n.right._t2 = y$1.map(1, 0, 1, this._t1, this._t2), e ? (e = y$1.map(e, t, 1, 0, 1), n.right.split(e).left) : n;
@@ -6064,7 +6062,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          };
 	          return i.z && e.z && (n.z = i.z + t * e.z), n;
 	        });
-	      return [new T(i)];
+	      return [new z(i)];
 	    }
 	    return this.reduce().map(function (e) {
 	      return e._linear ? e.offset(t)[0] : e.scale(t);
@@ -6079,7 +6077,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    const t = this.normal(0),
 	      e = this.normal(1);
 	    let i = t.x * e.x + t.y * e.y;
-	    return this._3d && (i += t.z * e.z), m$1(w$1(i)) < z$1 / 3;
+	    return this._3d && (i += t.z * e.z), m$1(C$1(i)) < T$1 / 3;
 	  }
 	  reduce() {
 	    let t,
@@ -6104,7 +6102,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    i = "number" == typeof i ? i : e;
 	    const n = this.order;
 	    let r = this.points.map((t, r) => (1 - r / n) * e + r / n * i);
-	    return new T(this.points.map((e, i) => ({
+	    return new z(this.points.map((e, i) => ({
 	      x: e.x + t.x * r[i],
 	      y: e.y + t.y * r[i]
 	    })));
@@ -6134,13 +6132,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          },
 	          l = i ? i((o + 1) / e) : t;
 	        i && !n && (l = -l);
-	        var u = C$1(a.x * a.x + a.y * a.y);
+	        var u = E$1(a.x * a.x + a.y * a.y);
 	        a.x /= u, a.y /= u, h[o + 1] = {
 	          x: s.x + l * a.x,
 	          y: s.y + l * a.y
 	        };
 	      }
-	    }), new T(h)) : ([0, 1].forEach(t => {
+	    }), new z(h)) : ([0, 1].forEach(t => {
 	      if (2 === e && t) return;
 	      const i = h[t * e],
 	        n = this.derivative(t),
@@ -6149,7 +6147,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          y: i.y + n.y
 	        };
 	      h[t + 1] = y$1.lli4(i, o, c, r[t + 1]);
-	    }), new T(h));
+	    }), new z(h));
 	  }
 	  outline(t, e, i, n) {
 	    if (e = void 0 === e ? t : e, this._linear) {
@@ -6181,7 +6179,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      const u = [c, h, a],
 	        p = y$1.makeline(u[2], l[0]),
 	        g = y$1.makeline(l[2], u[0]),
-	        x = [p, new T(l), g, new T(u)];
+	        x = [p, new z(l), g, new z(u)];
 	      return new d$1(x);
 	    }
 	    const r = this.reduce(),
@@ -6226,7 +6224,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return r;
 	  }
 	  intersects(t, e) {
-	    return t ? t.p1 && t.p2 ? this.lineIntersects(t) : (t instanceof T && (t = t.reduce()), this.curveintersects(this.reduce(), t, e)) : this.selfintersects(e);
+	    return t ? t.p1 && t.p2 ? this.lineIntersects(t) : (t instanceof z && (t = t.reduce()), this.curveintersects(this.reduce(), t, e)) : this.selfintersects(e);
 	  }
 	  lineIntersects(t) {
 	    const e = v$1(t.p1.x, t.p2.x),
@@ -6298,7 +6296,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	            if (a.interval.end = x = 1, h = a, r > 1) {
 	              let t = {
 	                x: a.x + a.r * b$1(a.e),
-	                y: a.y + a.r * E$1(a.e)
+	                y: a.y + a.r * w$1(a.e)
 	              };
 	              a.e += y$1.angle({
 	                x: a.x,
@@ -6343,7 +6341,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      height: Math.max(t.y, e.y, i.y) - o
 	    };
 	  },
-	  M$1 = (t, e, i) => {
+	  O$1 = (t, e, i) => {
 	    const n = Object.assign({}, t),
 	      r = {
 	        x: e.x - t.x,
@@ -6356,7 +6354,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    }
 	    return n;
 	  },
-	  O$1 = (t, e) => {
+	  M$1 = (t, e) => {
 	    const [i, n, r] = t,
 	      [o, s, a] = e,
 	      h = .1 / Math.abs([...t, ...e].reduce((t, e) => Math.min(t, e.x, e.y), -1)),
@@ -6392,7 +6390,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      s = o(e, i, n);
 	    return o(e, i, t) + o(i, n, t) + o(n, e, t) <= s + r;
 	  };
-	const A = (t, e, i, n, r) => {
+	const L = (t, e, i, n, r) => {
 	    var o;
 	    const {
 	        x: s,
@@ -6431,7 +6429,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    _.clearRect(0, 0, i.width, i.height);
 	    const b = Math.ceil(1 / (h * c));
 	    _.save(), _.transform(h * c, 0, 0, h * c, s * h * c, a * h * c);
-	    const E = (t, i, n, r, o, s, a) => {
+	    const w = (t, i, n, r, o, s, a) => {
 	      const c = [t, n, o],
 	        f = new Path2D();
 	      for (let t = 0; t < 3; t++) {
@@ -6454,8 +6452,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          d = a.x - 1 / h,
 	          v = a.y - 1 / h,
 	          b = l.width + 2 / h,
-	          E = l.height + 2 / h;
-	        _.drawImage(e, u, p, g, y, d, v, b, E), _.restore();
+	          w = l.height + 2 / h;
+	        _.drawImage(e, u, p, g, y, d, v, b, w), _.restore();
 	      }
 	      if (g) {
 	        const e = Math.floor(2 / h);
@@ -6479,25 +6477,25 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	            p = t.originalRegionPoints[i][n][s + 1],
 	            g = t.originalRegionPoints[i][n][s + o + 2],
 	            x = t.originalRegionPoints[i][n][s + o + 1];
-	          h && c && s % (o + 1) < o && (E(a, u, h, p, l, x, u), E(c, g, h, p, l, x, u));
+	          h && c && s % (o + 1) < o && (w(a, u, h, p, l, x, u), w(c, g, h, p, l, x, u));
 	        });
 	      });
 	    }), _.restore(), i;
 	  },
-	  L = (t, e, i, n) => {
+	  A = (t, e, i, n) => {
 	    const {
 	      width: r,
 	      height: o,
 	      sourceScale: s = 1,
 	      destinationScale: a = 1
 	    } = n;
-	    (i = null != i ? i : document.createElement("canvas")).width = r * a * s, i.height = o * a * s;
-	    return A(t, e, i, n, {
+	    i.width = r * a * s, i.height = o * a * s;
+	    return L(t, e, i, n, {
 	      calcBoundingBox: P,
 	      calcPerpendicularIntersection: R,
 	      calcCoordDistance: S$1,
-	      calcRelativeCoord: M$1,
-	      calcMatrix: O$1
+	      calcRelativeCoord: O$1,
+	      calcMatrix: M$1
 	    });
 	  },
 	  F = (t, e, i, n) => {
@@ -6563,22 +6561,22 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        const r = d.createProgram();
 	        return r ? (d.attachShader(r, i), d.attachShader(r, n), d.linkProgram(r), d.getProgramParameter(r, d.LINK_STATUS) ? r : (console.error("[Warpvas] Shader program linking error:", d.getProgramInfoLog(r)), null)) : (console.error("[Warpvas] Failed to create shader program."), null);
 	      },
-	      E = t => !(t & t - 1),
-	      w = b(v, "\n      varying highp vec2 vTextureCoord;\n      uniform sampler2D uSampler;\n      void main(void) {\n          gl_FragColor = texture2D(uSampler, vTextureCoord);\n      }\n  ");
-	    if (!w) throw Error("[Warpvas] Failed to initialize shader program.");
-	    const C = {
-	        program: w,
+	      w = t => !(t & t - 1),
+	      C = b(v, "\n      varying highp vec2 vTextureCoord;\n      uniform sampler2D uSampler;\n      void main(void) {\n          gl_FragColor = texture2D(uSampler, vTextureCoord);\n      }\n  ");
+	    if (!C) throw Error("[Warpvas] Failed to initialize shader program.");
+	    const E = {
+	        program: C,
 	        attribLocations: {
-	          vertexPosition: d.getAttribLocation(w, "aVertexPosition"),
-	          textureCoord: d.getAttribLocation(w, "aTextureCoord")
+	          vertexPosition: d.getAttribLocation(C, "aVertexPosition"),
+	          textureCoord: d.getAttribLocation(C, "aTextureCoord")
 	        },
 	        uniformLocations: {
-	          uSampler: d.getUniformLocation(w, "uSampler")
+	          uSampler: d.getUniformLocation(C, "uSampler")
 	        }
 	      },
-	      z = d.createTexture();
-	    if (!z) throw Error("[Warpvas] Failed to create WebGL texture object.");
-	    d.bindTexture(d.TEXTURE_2D, z), d.texImage2D(d.TEXTURE_2D, 0, d.RGBA, d.RGBA, d.UNSIGNED_BYTE, e), E(e.width) && E(e.height) && d.generateMipmap(d.TEXTURE_2D), d.enable(d.BLEND), d.blendFunc(d.SRC_ALPHA, d.ONE_MINUS_SRC_ALPHA), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_WRAP_S, d.CLAMP_TO_EDGE), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_WRAP_T, d.CLAMP_TO_EDGE), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_MIN_FILTER, d.LINEAR), d.viewport(0, 0, i.width, i.height);
+	      T = d.createTexture();
+	    if (!T) throw Error("[Warpvas] Failed to create WebGL texture object.");
+	    d.bindTexture(d.TEXTURE_2D, T), d.texImage2D(d.TEXTURE_2D, 0, d.RGBA, d.RGBA, d.UNSIGNED_BYTE, e), w(e.width) && w(e.height) && d.generateMipmap(d.TEXTURE_2D), d.enable(d.BLEND), d.blendFunc(d.SRC_ALPHA, d.ONE_MINUS_SRC_ALPHA), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_WRAP_S, d.CLAMP_TO_EDGE), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_WRAP_T, d.CLAMP_TO_EDGE), d.texParameteri(d.TEXTURE_2D, d.TEXTURE_MIN_FILTER, d.LINEAR), d.viewport(0, 0, i.width, i.height);
 	    return ((t, e, i) => {
 	      d.clearColor(0, 0, 0, 0), d.clear(d.COLOR_BUFFER_BIT);
 	      const n = d.FLOAT,
@@ -6595,7 +6593,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        f = b(v, `\n      void main(void) {\n        gl_FragColor = vec4(${l});\n      }\n    `);
 	      if (!f) throw Error("[Warpvas] Failed to initialize outline shader program.");
 	      d.bindBuffer(d.ARRAY_BUFFER, e.position), d.vertexAttribPointer(d.getAttribLocation(f, "aVertexPosition"), 2, n, r, 0, 0), d.enableVertexAttribArray(d.getAttribLocation(f, "aVertexPosition")), d.bindBuffer(d.ARRAY_BUFFER, e.textureCoord), d.vertexAttribPointer(d.getAttribLocation(f, "aTextureCoord"), 2, n, r, 0, 0), d.enableVertexAttribArray(d.getAttribLocation(f, "aTextureCoord")), d.useProgram(f), g && d.drawArrays(d.LINES, 0, 2 * m.before.length), x && d.drawArrays(d.POINTS, 0, 2 * m.before.length);
-	    })(C, (() => {
+	    })(E, (() => {
 	      const t = d.createBuffer();
 	      d.bindBuffer(d.ARRAY_BUFFER, t);
 	      const e = m.before.map((t, e) => {
@@ -6613,7 +6611,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        position: i,
 	        textureCoord: t
 	      };
-	    })(), z), i;
+	    })(), T), i;
 	  },
 	  D = (t, e, i, n) => {
 	    const {
@@ -6622,13 +6620,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      sourceScale: s = 1,
 	      destinationScale: a = 1
 	    } = n;
-	    (i = null != i ? i : document.createElement("canvas")).width = r * a * s, i.height = o * a * s;
+	    i.width = r * a * s, i.height = o * a * s;
 	    return F(t, e, i, n);
 	  },
 	  U = "WORKER_MESSAGE",
 	  W = "JOB_RESULT",
-	  G = t => t instanceof ArrayBuffer || t instanceof MessagePort || self.ImageBitmap && t instanceof ImageBitmap,
-	  k$1 = () => {
+	  k$1 = t => t instanceof ArrayBuffer || t instanceof MessagePort || self.ImageBitmap && t instanceof ImageBitmap,
+	  G = () => {
 	    const t = [];
 	    let e,
 	      i = new Map();
@@ -6640,7 +6638,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      onMessage: t => (e = t, n),
 	      create: n => {
 	        const r = n.toString(),
-	          o = `\n        // 将收集到的变量声明和定义加入脚本字符串，后面函数执行的时候便不会出现not defined的错误了\n        $collections = {};\n        ${Object.entries(Object.fromEntries(i)).reduce((t, [e, i]) => t + `$collections['${e}']=` + ("function" == typeof i ? `${i};` : `JSON.parse(\`${JSON.stringify(i)}\`);`), "")}\n  \n        // 声明定义用于判断是否是可转移对象的函数\n        $isTransferables = ${G}\n  \n        // 在脚本中声明并定义一个包含工作流程的函数体\n        $job=${r};\n  \n        // 给worker线程添加消息监听，等待主线程的发号施令\n        onmessage=e=>{\n          const { index, args } = e.data;\n  \n          Promise.resolve(\n            $job.apply($job, args.concat([{\n              collections: $collections,\n              postMessage: (message) => postMessage({ type: '${U}', message }),\n              close: self.close,\n            }]))\n          ).then(result => {\n            postMessage({ type: '${W}', message: { index, result } }, [result].filter($isTransferables))\n          }).catch(error => {\n            postMessage({ type: '${W}', message: { index, error } })\n          })\n        }\n      `,
+	          o = `\n        // 将收集到的变量声明和定义加入脚本字符串，后面函数执行的时候便不会出现not defined的错误了\n        $collections = {};\n        ${Object.entries(Object.fromEntries(i)).reduce((t, [e, i]) => t + `$collections['${e}']=` + ("function" == typeof i ? `${i};` : `JSON.parse(\`${JSON.stringify(i)}\`);`), "")}\n  \n        // 声明定义用于判断是否是可转移对象的函数\n        $isTransferables = ${k$1}\n  \n        // 在脚本中声明并定义一个包含工作流程的函数体\n        $job=${r};\n  \n        // 给worker线程添加消息监听，等待主线程的发号施令\n        onmessage=e=>{\n          const { index, args } = e.data;\n  \n          Promise.resolve(\n            $job.apply($job, args.concat([{\n              collections: $collections,\n              postMessage: (message) => postMessage({ type: '${U}', message }),\n              close: self.close,\n            }]))\n          ).then(result => {\n            postMessage({ type: '${W}', message: { index, result } }, [result].filter($isTransferables))\n          }).catch(error => {\n            postMessage({ type: '${W}', message: { index, error } })\n          })\n        }\n      `,
 	          s = URL.createObjectURL(new Blob([o], {
 	            type: "text/javascript"
 	          })),
@@ -6668,7 +6666,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	            }), a.postMessage({
 	              index: r,
 	              args: e
-	            }, e.filter(G));
+	            }, e.filter(k$1));
 	          }),
 	          terminate: () => {
 	            a.terminate(), URL.revokeObjectURL(s), t.length = 0, i.clear(), e = void 0;
@@ -6678,7 +6676,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    };
 	    return n;
 	  },
-	  N = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
+	  H = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
 	    const {
 	        regionPoints: e,
 	        renderingConfig: o,
@@ -6698,15 +6696,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        regionPoints: e,
 	        originalRegionPoints: a
 	      },
-	      c = k$1().collect({
+	      c = G().collect({
 	        warpvas: h,
 	        options: r,
-	        createWarpedCanvas: A,
+	        createWarpedCanvas: L,
 	        calcBoundingBox: P,
 	        calcPerpendicularIntersection: R,
 	        calcCoordDistance: S$1,
-	        calcRelativeCoord: M$1,
-	        calcMatrix: O$1
+	        calcRelativeCoord: O$1,
+	        calcMatrix: M$1
 	      }).create((t, {
 	        collections: e
 	      }) => {
@@ -6739,9 +6737,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        }).transferToImageBitmap();
 	      }),
 	      l = yield c.run(i);
-	    return c.terminate(), (n = null != n ? n : document.createElement("canvas")).width = l.width, n.height = l.height, n.getContext("2d").drawImage(l, 0, 0), n;
+	    return c.terminate(), n.width = l.width, n.height = l.height, N(n, l), n;
 	  }),
-	  H = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
+	  N = (t, e) => {
+	    const i = t.getContext("2d");
+	    if (!i || !("drawImage" in i)) throw new Error("[Warpvas] Failed to get 2D rendering context for the output canvas");
+	    i.drawImage(e, 0, 0);
+	  },
+	  $ = (t, i, n, r) => e$1(void 0, void 0, void 0, function* () {
 	    const {
 	        regionPoints: e,
 	        renderingConfig: o,
@@ -6761,7 +6764,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        regionPoints: e,
 	        originalRegionPoints: a
 	      },
-	      c = k$1().collect({
+	      c = G().collect({
 	        warpvas: h,
 	        options: r,
 	        createWarpedCanvas: F
@@ -6782,19 +6785,24 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        return r(n, t, new OffscreenCanvas(o * h * a, s * h * a), i).transferToImageBitmap();
 	      }),
 	      l = yield c.run(i);
-	    return c.terminate(), (n = null != n ? n : document.createElement("canvas")).width = l.width, n.height = l.height, n.getContext("2d").drawImage(l, 0, 0), n;
-	  });
-	var $, j;
+	    return c.terminate(), n.width = l.width, n.height = l.height, j(n, l), n;
+	  }),
+	  j = (t, e) => {
+	    const i = t.getContext("2d");
+	    if (!i || !("drawImage" in i)) throw new Error("[Warpvas] Failed to get 2D rendering context for the output canvas");
+	    i.drawImage(e, 0, 0);
+	  };
+	var V, X;
 	!function (t) {
 	  t.TOP_LEFT = "tl", t.TOP_RIGHT = "tr", t.BOTTOM_LEFT = "bl", t.BOTTOM_RIGHT = "br";
-	}($ || ($ = {})), function (t) {
+	}(V || (V = {})), function (t) {
 	  t.TOP = "top", t.BOTTOM = "bottom", t.LEFT = "left", t.RIGHT = "right";
-	}(j || (j = {}));
-	class V {
+	}(X || (X = {}));
+	class Y {
 	  constructor(t, e = 1, i = 1) {
 	    if (this.splitPoints = [], this.originalRegions = [], this.originalRegionPoints = [], this.regionBoundaryCurves = [], this.regionCurves = [], this.regionPoints = [], this.splitUnit = .05, this.splitStrategy = {
 	      name: "default",
-	      execute: V.strategy
+	      execute: Y.strategy
 	    }, this.renderingContext = "webgl", this.renderingConfig = {
 	      padding: 0,
 	      enableAntialias: !0,
@@ -6808,7 +6816,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        b: 0,
 	        a: 1
 	      }
-	    }, this._safeModeEnabled = !1, this._cacheSourceSize = null, this._cacheSourceImageData = null, this._cacheInputCanvas = null, this._cacheOutputCanvas = null, this._inputLimitScale = 1, this._outputLimitScale = 1, !(t instanceof HTMLCanvasElement || t instanceof HTMLImageElement)) throw new TypeError("[Warpvas] source must be either HTMLCanvasElement or HTMLImageElement!");
+	    }, this._safeModeEnabled = !1, this._cacheSourceSize = null, this._cacheSourceImageData = null, this._cacheInputCanvas = null, this._cacheOutputCanvas = null, this._inputLimitScale = 1, this._outputLimitScale = 1, !(t instanceof HTMLCanvasElement || t instanceof OffscreenCanvas || t instanceof HTMLImageElement)) throw new TypeError("[Warpvas] source must be an HTMLCanvasElement, OffscreenCanvas, or HTMLImageElement!");
 	    if (t instanceof HTMLImageElement) {
 	      const e = document.createElement("canvas"),
 	        i = e.getContext("2d");
@@ -6907,9 +6915,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    const i = Math.max(Math.floor(t), 1),
 	      n = Math.max(Math.floor(e), 1),
 	      r = [];
-	    for (let o = 1; o < i; o++) for (let i = 1; i < n; i++) o === i && r.push({
-	      x: i / e,
-	      y: o / t
+	    for (let t = 0; t < i; t++) for (let e = 0; e < n; e++) r.push({
+	      x: e / n,
+	      y: t / i
 	    });
 	    return r;
 	  }
@@ -6945,7 +6953,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        }
 	      });
 	    }
-	    return r;
+	    return console.log(r), r;
 	  }
 	  _calculateSamplingPoints(t) {
 	    const e = t.tr.x - t.tl.x,
@@ -7023,7 +7031,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      if (1 === e) return void n.vertical.push(t.right);
 	      const i = t.top.get(e),
 	        r = t.bottom.get(e),
-	        o = new T$1([i, {
+	        o = new z$1([i, {
 	          x: i.x + ((t.left.points[1].x - t.left.points[0].x) * (1 - e) + (t.right.points[1].x - t.right.points[0].x) * e),
 	          y: i.y + ((t.left.points[1].y - t.left.points[0].y) * (1 - e) + (t.right.points[1].y - t.right.points[0].y) * e)
 	        }, {
@@ -7036,7 +7044,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      if (1 === e) return void n.horizontal.push(t.bottom);
 	      const i = t.left.get(e),
 	        r = t.right.get(e),
-	        o = new T$1([i, {
+	        o = new z$1([i, {
 	          x: i.x + ((t.top.points[1].x - t.top.points[0].x) * (1 - e) + (t.bottom.points[1].x - t.bottom.points[0].x) * e),
 	          y: i.y + ((t.top.points[1].y - t.top.points[0].y) * (1 - e) + (t.bottom.points[1].y - t.bottom.points[0].y) * e)
 	        }, {
@@ -7068,7 +7076,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    return this.splitStrategy = t, this;
 	  }
 	  setInputLimitSize(t) {
-	    return this._inputLimitSize = t, t || (this._inputLimitScale = 1, this._cacheInputCanvas = null), this._cacheSourceImageData = null, this;
+	    return this._inputLimitSize = t, t || (this._inputLimitScale = 1), this._cacheInputCanvas = null, this._cacheSourceImageData = null, this;
 	  }
 	  setOutputLimitSize(t) {
 	    return this._outputLimitSize = t, t || (this._outputLimitScale = 1), this;
@@ -7110,6 +7118,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      width: n.right - n.left + 2 * t,
 	      height: n.bottom - n.top + 2 * t
 	    };
+	  }
+	  _blankCanvas() {
+	    return this.source instanceof OffscreenCanvas ? new OffscreenCanvas(0, 0) : document.createElement("canvas");
 	  }
 	  _cloneCanvas(t, e = t.width, i = t.height) {
 	    const n = document.createElement("canvas");
@@ -7196,10 +7207,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        });
 	      },
 	      [s, a] = {
-	        [$.TOP_LEFT]: ["top", "first"],
-	        [$.TOP_RIGHT]: ["top", "last"],
-	        [$.BOTTOM_LEFT]: ["bottom", "first"],
-	        [$.BOTTOM_RIGHT]: ["bottom", "last"]
+	        [V.TOP_LEFT]: ["top", "first"],
+	        [V.TOP_RIGHT]: ["top", "last"],
+	        [V.BOTTOM_LEFT]: ["bottom", "first"],
+	        [V.BOTTOM_RIGHT]: ["bottom", "last"]
 	      }[i];
 	    o(s, a, n);
 	    const h = this._findConnectedVertex(s, a);
@@ -7208,57 +7219,57 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	  updateVertexCoord(t, e, i, n, r = !0) {
 	    this._setSingleRegionVertexCoord(t, e, i, n, r);
 	    return {
-	      [$.TOP_LEFT]: [{
+	      [V.TOP_LEFT]: [{
 	        row: t - 1,
 	        col: e - 1,
-	        type: $.BOTTOM_RIGHT
+	        type: V.BOTTOM_RIGHT
 	      }, {
 	        row: t - 1,
 	        col: e,
-	        type: $.BOTTOM_LEFT
+	        type: V.BOTTOM_LEFT
 	      }, {
 	        row: t,
 	        col: e - 1,
-	        type: $.TOP_RIGHT
+	        type: V.TOP_RIGHT
 	      }],
-	      [$.TOP_RIGHT]: [{
+	      [V.TOP_RIGHT]: [{
 	        row: t - 1,
 	        col: e + 1,
-	        type: $.BOTTOM_LEFT
+	        type: V.BOTTOM_LEFT
 	      }, {
 	        row: t,
 	        col: e + 1,
-	        type: $.TOP_LEFT
+	        type: V.TOP_LEFT
 	      }, {
 	        row: t - 1,
 	        col: e,
-	        type: $.BOTTOM_RIGHT
+	        type: V.BOTTOM_RIGHT
 	      }],
-	      [$.BOTTOM_LEFT]: [{
+	      [V.BOTTOM_LEFT]: [{
 	        row: t,
 	        col: e - 1,
-	        type: $.BOTTOM_RIGHT
+	        type: V.BOTTOM_RIGHT
 	      }, {
 	        row: t + 1,
 	        col: e,
-	        type: $.TOP_LEFT
+	        type: V.TOP_LEFT
 	      }, {
 	        row: t + 1,
 	        col: e - 1,
-	        type: $.TOP_RIGHT
+	        type: V.TOP_RIGHT
 	      }],
-	      [$.BOTTOM_RIGHT]: [{
+	      [V.BOTTOM_RIGHT]: [{
 	        row: t,
 	        col: e + 1,
-	        type: $.BOTTOM_LEFT
+	        type: V.BOTTOM_LEFT
 	      }, {
 	        row: t + 1,
 	        col: e,
-	        type: $.TOP_RIGHT
+	        type: V.TOP_RIGHT
 	      }, {
 	        row: t + 1,
 	        col: e + 1,
-	        type: $.TOP_LEFT
+	        type: V.TOP_LEFT
 	      }]
 	    }[i].forEach(({
 	      row: t,
@@ -7269,19 +7280,35 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    }), this;
 	  }
 	  updateRegionBoundCoords(t, e, i, n) {
-	    return this.regionBoundaryCurves = this._initializeRegionBoundaryCurves(this.forEachRegionBoundCoords((r, o, s, a) => r === t && o === e && i === s ? n : a.points.map(t => ({
-	      x: t.x,
-	      y: t.y
-	    })))), this.updateVertexCoord(t, e, {
-	      top: $.TOP_LEFT,
-	      right: $.TOP_RIGHT,
-	      bottom: $.BOTTOM_LEFT,
-	      left: $.TOP_LEFT
+	    return this.regionBoundaryCurves = this._initializeRegionBoundaryCurves(this.forEachRegionBoundCoords((r, o, s, a) => {
+	      if (r === t && o === e && i === s) return n;
+	      switch (i) {
+	        case X.TOP:
+	          if (r === t - 1 && o === e && s === X.BOTTOM) return n;
+	          break;
+	        case X.BOTTOM:
+	          if (r === t + 1 && o === e && s === X.TOP) return n;
+	          break;
+	        case X.LEFT:
+	          if (r === t && o === e - 1 && s === X.RIGHT) return n;
+	          break;
+	        case X.RIGHT:
+	          if (r === t && o === e + 1 && s === X.LEFT) return n;
+	      }
+	      return a.points.map(t => ({
+	        x: t.x,
+	        y: t.y
+	      }));
+	    })), this.updateVertexCoord(t, e, {
+	      top: V.TOP_LEFT,
+	      right: V.TOP_RIGHT,
+	      bottom: V.BOTTOM_LEFT,
+	      left: V.TOP_LEFT
 	    }[i], n[0], !1), this.updateVertexCoord(t, e, {
-	      top: $.TOP_RIGHT,
-	      right: $.BOTTOM_RIGHT,
-	      bottom: $.BOTTOM_RIGHT,
-	      left: $.BOTTOM_LEFT
+	      top: V.TOP_RIGHT,
+	      right: V.BOTTOM_RIGHT,
+	      bottom: V.BOTTOM_RIGHT,
+	      left: V.BOTTOM_LEFT
 	    }[i], n[3], !1), this;
 	  }
 	  forEachRegionBoundCoords(t = (t, e, i, n) => n.points) {
@@ -7315,7 +7342,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          }
 	          if (!h[c]) {
 	            const e = t[c];
-	            h[c] = new T$1(e[0].x, e[0].y, e[1].x, e[1].y, e[2].x, e[2].y, e[3].x, e[3].y);
+	            h[c] = new z$1(e[0].x, e[0].y, e[1].x, e[1].y, e[2].x, e[2].y, e[3].x, e[3].y);
 	          }
 	        }
 	        e[e.length - 1].push(h);
@@ -7436,10 +7463,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          horizontal: n,
 	          vertical: r
 	        } = this._generateRegionCurves({
-	          left: new T$1(t[e].left),
-	          right: new T$1(t[e].right),
-	          top: new T$1(t[e].top),
-	          bottom: new T$1(t[e].bottom)
+	          left: new z$1(t[e].left),
+	          right: new z$1(t[e].right),
+	          top: new z$1(t[e].top),
+	          bottom: new z$1(t[e].bottom)
 	        }, [0, a, 1], [0, 1]),
 	        {
 	          left: o,
@@ -7566,7 +7593,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      this._outputLimitSize.width && (t = Math.min(t, this._outputLimitSize.width / r)), this._outputLimitSize.height && (t = Math.min(t, this._outputLimitSize.height / o)), this._outputLimitScale = t;
 	    }
 	    let s = null !== (t = this._cacheInputCanvas) && void 0 !== t ? t : this.source;
-	    const a = null !== (e = this._cacheOutputCanvas) && void 0 !== e ? e : null;
+	    const a = null !== (e = this._cacheOutputCanvas) && void 0 !== e ? e : this._blankCanvas();
 	    s === a && (console.warn("[Warpvas] Do not use the same canvas as both input and output. This will require creating a copy of the input canvas before each render operation."), s = this._cloneCanvas(s));
 	    return {
 	      inputCanvas: s,
@@ -7586,7 +7613,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	    if (t && this._cacheSourceImageData) return this._cacheSourceImageData;
 	    const i = null !== (e = this._cacheInputCanvas) && void 0 !== e ? e : this.source,
 	      n = i.getContext("2d");
-	    if (!n) throw new Error("[Warpvas] Failed to get 2D rendering context. Please ensure that:\n1. The inputCanvas is a valid <canvas> element\n2. The browser supports Canvas API\n3. The canvas has not been tainted by cross-origin content");
+	    if (!n || !("getImageData" in n)) throw new Error("[Warpvas] Failed to get 2D rendering context. Please ensure that:\n1. The input canvas is an HTMLCanvasElement or OffscreenCanvas with a 2D context\n2. The browser supports Canvas API\n3. The canvas has not been tainted by cross-origin content");
 	    const r = n.getImageData(0, 0, i.width, i.height);
 	    return this._cacheSourceImageData = r, r;
 	  }
@@ -7596,15 +7623,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	      outputCanvas: e,
 	      options: i
 	    } = this._generateRenderOptions();
-	    if (this._safeModeEnabled) return L(this, t, e, i);
+	    if (this._safeModeEnabled) return A(this, t, e, i);
 	    const n = {
-	      "2d": L,
+	      "2d": A,
 	      webgl: D
 	    }[this.renderingContext];
 	    try {
 	      return n(this, t, e, i);
 	    } catch (n) {
-	      if (this.renderingConfig.enableSafeRendering && "webgl" === this.renderingContext) return this._safeModeEnabled = !0, L(this, t, e, i);
+	      if (this.renderingConfig.enableSafeRendering && "webgl" === this.renderingContext) return this._safeModeEnabled = !0, A(this, t, e, i);
 	      throw n;
 	    }
 	  }
@@ -7615,15 +7642,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	          options: i
 	        } = this._generateRenderOptions(),
 	        n = this._getInputCanvasImageData(t);
-	      if (this._safeModeEnabled) return H(this, n, e, i);
+	      if (this._safeModeEnabled) return $(this, n, e, i);
 	      const r = {
-	        "2d": N,
-	        webgl: H
+	        "2d": H,
+	        webgl: $
 	      }[this.renderingContext];
 	      try {
 	        return r(this, n, e, i);
 	      } catch (t) {
-	        if (this.renderingConfig.enableSafeRendering && "webgl" === this.renderingContext) return this._safeModeEnabled = !0, H(this, n, e, i);
+	        if (this.renderingConfig.enableSafeRendering && "webgl" === this.renderingContext) return this._safeModeEnabled = !0, $(this, n, e, i);
 	        throw t;
 	      }
 	    });
@@ -9158,7 +9185,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        // Generate pre-deformation canvas
 	        const logoCanvas = createLOGO();
 	        // Apply deformation based on steps
-	        const warpvas = new V(logoCanvas);
+	        const warpvas = new Y(logoCanvas);
 	        applyDistortionEffects(warpvas, step);
 	        const warpedCanvas = warpvas.render();
 	        const image = new fabric.fabric.Image(warpedCanvas, {
@@ -9215,6 +9242,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 	        './codes/10-set-output-limit-size.md',
 	        './codes/11-set-rendering-context.md',
 	        './codes/12-render-with-worker.md',
+	        './codes/13-offscreen-canvas.md',
 	    ], []);
 	    const [indexs, setIndexs] = React2.useState(examples.map((_, index, arr) => arr.length - index));
 	    const step = React2.useMemo(() => {

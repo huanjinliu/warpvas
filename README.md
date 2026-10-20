@@ -200,6 +200,14 @@ const warpvas = new Warpvas(canvas);
 await warpvas.renderWithWorker();
 ```
 
+### 13. Distort an OffscreenCanvas
+
+```typescript
+const source = new OffscreenCanvas(width, height);
+const warpvas = new Warpvas(source);
+const output = warpvas.render();
+```
+
 Check out the project's [online demo](https://huanjinliu.github.io/warpvas/) or directly view the [project API documentation](docs/api/README.md).
 
 ### License

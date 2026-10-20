@@ -201,6 +201,14 @@ const warpvas = new Warpvas(canvas);
 await warpvas.renderWithWorker();
 ```
 
+### 13. 使用 OffscreenCanvas 进行变形
+
+```typescript
+const source = new OffscreenCanvas(width, height);
+const warpvas = new Warpvas(source);
+const output = warpvas.render();
+```
+
 查看项目的[在线示例](https://huanjinliu.github.io/warpvas/)，或直接查阅[项目API文档](docs/api/README.md)。
 
 ### 许可证
